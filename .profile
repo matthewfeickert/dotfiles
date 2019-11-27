@@ -49,3 +49,6 @@ fi
 if [ -d "/usr/local/root/bin/" ] ; then
     . /usr/local/root/bin/thisroot.sh
 fi
+
+# Add GPG key
+export GPG_TTY=$(tty)
