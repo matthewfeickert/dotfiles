@@ -72,6 +72,11 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# Instead of directly editing the .zshrc load a user version
+if [ -f ~/.zshrc_user ]; then
+    . ~/.zshrc_user
+fi
+
 # User configuration
 
 export MANPATH="/usr/local/man:$MANPATH"

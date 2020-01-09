@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+autoload bashcompinit
+bashcompinit
+
+# use the .bashrc_user file to avoid code duplication
+source "${HOME}/.bashrc_user"
