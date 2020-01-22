@@ -39,5 +39,7 @@
       "boson"
       "reconfiguring"
     ]
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
