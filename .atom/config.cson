@@ -1,5 +1,6 @@
 "*":
   "spell-check":
+    addKnownWords: true
     grammars: [
       "source.asciidoc"
       "source.gfm"
@@ -32,6 +33,11 @@
       "colliders"
       "partons"
       "insertable"
+      "Neubauer"
+      "bosons"
+      "muon"
+      "boson"
+      "reconfiguring"
     ]
   welcome:
     showOnStartup: false
