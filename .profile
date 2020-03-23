@@ -52,3 +52,11 @@ fi
 
 # Add GPG key
 export GPG_TTY=$(tty)
+
+# Add Go to PATH
+if [ -d "${HOME}/go" ] ; then
+    export GOPATH="${HOME}/go"
+fi
+if [ -d "/usr/local/go" ] ; then
+    export PATH="/usr/local/go/bin:${PATH}:${GOPATH}/bin"
+fi
