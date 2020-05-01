@@ -42,5 +42,13 @@ if [ -d "/home/${USER}/perl5" ]; then
     PERL_MM_OPT="INSTALL_BASE=/home/${USER}/perl5"; export PERL_MM_OPT;
 fi
 
+# Add Bazel support
+if [ -d "/home/${USER}/bin" ]; then
+    PATH="/home/${USER}/bin${PATH:+:${PATH}}"; export PATH;
+fi
+if [ -d "/home/${USER}/.bazel/bin" ]; then
+    . "/home/${USER}/.bazel/bin/bazel-complete.bash"
+fi
+
 # Add GPG key
 export GPG_TTY=$(tty)
