@@ -50,5 +50,10 @@ if [ -d "/home/${USER}/.bazel/bin" ]; then
     . "/home/${USER}/.bazel/bin/bazel-complete.bash"
 fi
 
+# Add Pandamonium
+if [ -d "/home/${USER}/.local/pandamonium" ]; then
+    PATH="/home/${USER}/.local/pandamonium${PATH:+:${PATH}}"; export PATH;
+fi
+
 # Add GPG key
 export GPG_TTY=$(tty)
