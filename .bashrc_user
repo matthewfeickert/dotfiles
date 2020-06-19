@@ -22,6 +22,11 @@ if [ -f /opt/_venv-activate/_venv-activate.sh ]; then
     . /opt/_venv-activate/_venv-activate.sh
 fi
 
+# Enable h5ls tab completion
+if [ -f /opt/_h5ls/_h5ls.sh ]; then
+    . /opt/_h5ls/_h5ls.sh
+fi
+
 # # Enable CUDA Toolkit 10.2
 # if [ -d "/usr/local/cuda-10.2/bin" ]; then
 #     PATH="/usr/local/cuda-10.2/bin:/usr/local/cuda-10.2/NsightCompute-2019.1${PATH:+:${PATH}}"; export PATH;
