@@ -14,5 +14,12 @@ alias lxplus='ssh -CX feickert@lxplus.cern.ch'
 alias beastmode='ssh -CX feickert@beast.physics.illinois.edu'
 alias atlasconnect='ssh -CX feickert@login.usatlas.org'
 
+# tools
+
+# https://github.com/saulpw/visidata
+if [ -f "/usr/bin/vd" ]; then
+    alias visidata='vd'
+fi
+
 # fun
 alias advice='cowsay $(fortune) | lolcat'
