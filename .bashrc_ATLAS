@@ -1,0 +1,18 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# User specific aliases and functions
+# Instead of directly editing the system's default .bashrc load a user version
+if shopt -q login_shell ; then # Load only on login shells
+		if [ -f ~/.bashrc_user ]; then
+		    . ~/.bashrc_user
+		fi
+fi

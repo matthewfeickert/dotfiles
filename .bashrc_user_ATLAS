@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# User specific functions
+export CLICOLOR=1
+
+alias fullpath="readlink -f"
+
+export ATLAS_LOCAL_ROOT_BASE=/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase
+# Allows for working with wrappers as well
+source "${ATLAS_LOCAL_ROOT_BASE}/user/atlasLocalSetup.sh" --quiet || echo "~~~ERROR: setupATLAS failed!~~~"
+
+export RUCIO_ACCOUNT=feickert
+
+# Setup default LCG view
+default_LCG_release="LCG_98python3"
+default_LCG_platform="x86_64-centos7-gcc8-opt"
+printf "\nlsetup 'views ${default_LCG_release} ${default_LCG_platform}'\n"
+lsetup "views ${default_LCG_release} ${default_LCG_platform}"
+# strip out LGG view site-packages from PYTHONPATH to allow venv control of pip
+IFS=':' read -ra _LCG_paths <<< "${PYTHONPATH}"
+for idx in "${!_LCG_paths[@]}"
+do
+    [[ "${_LCG_paths[$idx]}" == *"site-packages"* ]] && unset -v "_LCG_paths[${idx}]"
+done
+export PYTHONPATH=$(IFS=:; echo "${_LCG_paths[*]}")
+
+# Ensure local virtualenv setup
+if [ ! -f "${HOME}/opt/venv/bin/virtualenv" ]; then
+    curl -sL --location --output /tmp/virtualenv.pyz https://bootstrap.pypa.io/virtualenv.pyz
+    python3 /tmp/virtualenv.pyz ~/opt/venv
+    # python /tmp/virtualenv.pyz ~/opt/venv
+    ~/opt/venv/bin/pip install --upgrade pip
+    ~/opt/venv/bin/pip install virtualenv
+    mkdir -p ~/bin  # Ensure exists if new machine
+    ln -s ~/opt/venv/bin/virtualenv ~/bin/virtualenv
+fi
+
+# default venv from `virtualenv "${HOME}/.venvs/base"`
+if [ -d "${HOME}/.venvs/base" ]; then
+	  source "${HOME}/.venvs/base/bin/activate"
+fi
