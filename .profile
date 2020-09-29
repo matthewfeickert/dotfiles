@@ -28,16 +28,6 @@ fi
 
 # User added
 
-# Ensure local virtualenv setup
-if [ ! -f "${HOME}/opt/venv/bin/virtualenv" ]; then
-    curl -sL --location --output /tmp/virtualenv.pyz https://bootstrap.pypa.io/virtualenv.pyz
-    python3 /tmp/virtualenv.pyz ~/opt/venv
-    ~/opt/venv/bin/pip install --upgrade pip
-    ~/opt/venv/bin/pip install virtualenv
-    mkdir -p ~/bin  # Ensure exists if new machine
-    ln -s ~/opt/venv/bin/virtualenv ~/bin/virtualenv
-fi
-
 # Add TeX Live to PATH
 if [ -d "/usr/local/texlive/2018/bin/x86_64-linux" ] ; then
     PATH="/usr/local/texlive/2018/bin/x86_64-linux:$PATH"
