@@ -80,11 +80,6 @@ if [ -d "${HOME}/.cargo/bin" ]; then
     PATH="${HOME}/.cargo/bin${PATH:+:${PATH}}"; export PATH;
 fi
 
-# Add Pandamonium
-if [ -d "/home/${USER}/.local/pandamonium" ]; then
-    PATH="/home/${USER}/.local/pandamonium${PATH:+:${PATH}}"; export PATH;
-fi
-
 # Add rbenv
 if [ -d "${HOME}/.rbenv/bin" ]; then
     PATH="${HOME}/.rbenv/bin${PATH:+:${PATH}}"; export PATH;
