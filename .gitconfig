@@ -29,3 +29,6 @@
 [url "git@github.com:"]
   insteadOf = https://github.com/
   insteadOf = http://github.com/
+[url "git@gitlab.cern.ch:"]
+  insteadOf = https://gitlab.cern.ch/
+  insteadOf = http://gitlab.cern.ch/
