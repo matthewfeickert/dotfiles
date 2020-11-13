@@ -1,0 +1,31 @@
+[user]
+	name = Matthew Feickert
+	email = matthew.feickert@cern.ch
+	signingkey = 7C897ED848B0F976
+[core]
+	editor = vim
+[alias]
+	glog = log --graph --oneline --decorate --all
+	fstatus = !git fetch -p && git status
+	ftag = !git tag -d $(git tag) > /dev/null 2>&1 && git fetch --tags > /dev/null 2>&1 && git tag
+	incoming = "!f() { git fetch && git log ..origin/$(git rev-parse --abbrev-ref HEAD); }; f"
+	outgoing = "!f() { git fetch && git log origin/$(git rev-parse --abbrev-ref HEAD)..; }; f"
+	last-files = "!f() { git show --name-only $(git rev-parse HEAD); }; f"
+[commit]
+	gpgsign = true
+[diff "jupyternotebook"]
+	command = git-nbdiffdriver diff
+[merge "jupyternotebook"]
+	driver = git-nbmergedriver merge %O %A %B %L %P
+	name = jupyter notebook merge driver
+[difftool "nbdime"]
+	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+[difftool]
+	prompt = false
+[mergetool "nbdime"]
+	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[mergetool]
+	prompt = false
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+  insteadOf = http://github.com/
