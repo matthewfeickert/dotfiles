@@ -32,3 +32,7 @@
 [url "git@gitlab.cern.ch:"]
   insteadOf = https://gitlab.cern.ch/
   insteadOf = http://gitlab.cern.ch/
+[pull]
+	rebase = true
+[rebase]
+	autostash = true
