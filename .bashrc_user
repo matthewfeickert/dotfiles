@@ -15,9 +15,40 @@ if [ ! -f "${HOME}/opt/venv/bin/virtualenv" ]; then
     ln -s ~/opt/venv/bin/virtualenv ~/bin/virtualenv
 fi
 
-# default venv from `virtualenv "${HOME}/.venvs/base"`
-if [ -d "${HOME}/.venvs/base" ]; then
-    source "${HOME}/.venvs/base/bin/activate"
+# Add pyenv
+if [ -d "${HOME}/.pyenv/bin" ]; then
+    export PYENV_ROOT="${HOME}/.pyenv"
+    export PATH="${PYENV_ROOT}/bin:${PATH}"
+
+    if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+    fi
+
+    # Add pyenv-virtualenv
+    if [ -d "${HOME}/.pyenv/plugins/pyenv-virtualenv" ]; then
+        eval "$(pyenv virtualenv-init -)"
+    fi
+
+    # Allow for prompt updating on venv switch
+    # c.f. https://github.com/pyenv/pyenv-virtualenv/issues/135#issuecomment-717554081
+    export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+    export BASE_PROMPT=$PS1
+    function updatePrompt {
+        if [[ "$(pyenv version-name)" != "system" ]]; then
+            PYENV_VER=$(pyenv version-name)               # capture version name in variable
+            export PS1="(${PYENV_VER%%:*}) "$BASE_PROMPT  # grab text prior to first ':' character
+        else
+            export PS1=$BASE_PROMPT
+        fi
+    }
+    export PROMPT_COMMAND='updatePrompt'
+
+    # default venv
+    if [ -d "${HOME}/.pyenv/versions/3.8.6/envs/base" ]; then
+        pyenv activate base
+    fi
+
+    alias deactivate='pyenv deactivate'
 fi
 
 # Enable tab completion of Python virtual environments
