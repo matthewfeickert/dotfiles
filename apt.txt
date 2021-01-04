@@ -1,0 +1,86 @@
+bat # symlinked to batcat
+caffeine
+ccache # ROOT
+cmake
+containerd.io
+cowsay
+curl
+docker-ce
+docker-ce-cli
+dot2unix
+font-manager
+fonts-freefont-otf
+fonts-stix
+fonts-texgyre # texgyreheros font
+fortune
+gfortran
+git
+git-doc
+git-email
+gitweb
+glmark2
+gnome-tweak-tool # remap CapsLock to Ctrl
+graphviz-dev # ROOT
+hdf5-tools
+htop
+jq
+krb5-user # ROOT
+libavahi-compat-libdnssd-dev # ROOT
+libblas-dev
+libcfitsio-dev # ROOT
+libffi-dev # python 3
+libfftw3-dev # ROOT
+libfreeimage3 # cuDNN
+libfreeimage-dev # cuDNN
+libftgl-dev # ROOT
+libglew-dev # ROOT
+libgsl0-dev # ROOT
+libkrb5-dev # ROOT
+liblapack-dev
+liblapack-doc
+libldap-dev # ROOT
+liblzma-dev # python 3
+liblzma-doc
+libmysqlclient-dev # ROOT
+libncurses5-dev # python 3
+libncurses-dev # python 3
+libpcre3-dev # ROOT
+libreadline-dev # python 3
+libsqlite3-dev # python 3
+libssl-dev # python 3
+libssl-doc
+libxml2-dev # python 3
+libxmlsec1-dev # python 3
+libxpm-dev # ROOT
+llvm
+lolcat
+mlocate
+ncurses-doc
+nvidia-cuda-toolkit
+nvidia-driver-455
+openssh-server
+pandoc
+perl-tk # tlmgr
+python3-dev
+python3-numpy-dev # ROOT
+python3-textile # python 3
+python3-tk
+python3-tzlocal
+python3-venv
+qt5-default # ROOT
+r-base
+readline-doc
+screenfetch
+shellcheck
+speedtest-cli
+sqlite3-doc
+sshfs
+t1-cyrillic # Free Chancery font
+tcllib # globus
+tk-dev # python 3
+ttf-dejavu # Dejavu font
+ttf-mscorefonts-installer # Georgia font in LaTeX
+vim
+xlibmesa-glu-dev # ROOT
+zlib1g-dev
+zlibc
