@@ -29,14 +29,14 @@ fi
 # User added
 
 # Add TeX Live to PATH
-if [ -d "/usr/local/texlive/2018/bin/x86_64-linux" ] ; then
-    PATH="/usr/local/texlive/2018/bin/x86_64-linux:$PATH"
+if [ -d "/usr/local/texlive/2020/bin/x86_64-linux" ] ; then
+    PATH="/usr/local/texlive/2020/bin/x86_64-linux:$PATH"
 fi
-if [ -d "/usr/local/texlive/2018/texmf-dist/doc/man" ] ; then
-    MANPATH="/usr/local/texlive/2018/texmf-dist/doc/man:$MANPATH"
+if [ -d "/usr/local/texlive/2020/texmf-dist/doc/man" ] ; then
+    MANPATH="/usr/local/texlive/2020/texmf-dist/doc/man:$MANPATH"
 fi
-if [ -d "/usr/local/texlive/2018/texmf-dist/doc/info" ] ; then
-    INFOPATH="/usr/local/texlive/2018/texmf-dist/doc/info:$INFOPATH"
+if [ -d "/usr/local/texlive/2020/texmf-dist/doc/info" ] ; then
+    INFOPATH="/usr/local/texlive/2020/texmf-dist/doc/info:$INFOPATH"
 fi
 
 # Add Mendeley Desktop to PATH
