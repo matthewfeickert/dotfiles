@@ -104,3 +104,11 @@ fi
 
 # Add GPG key
 export GPG_TTY=$(tty)
+
+# Add temporary PATH modification until next load of .profile
+if [ -f "/tmp/.profile" ]; then
+    . /tmp/.profile
+fi
+if [ -f "/tmp/.bash_profile" ]; then
+    . /tmp/.bash_profile
+fi
