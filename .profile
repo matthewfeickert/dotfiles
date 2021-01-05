@@ -44,10 +44,10 @@ if [ -d "/opt/mendeleydesktop-1.19.4-linux-x86_64/bin" ] ; then
     PATH="/opt/mendeleydesktop-1.19.4-linux-x86_64/bin:$PATH"
 fi
 
-# Add ROOT setup
-# Built with: cmake -Dall="ON" -Dsoversion="ON" -Dqtgsi="OFF" -Dbuiltin_xrootd="ON" -Dcuda="OFF" -Dtmva-gpu="OFF" -DPYTHON_EXECUTABLE=$(which python3)
-if [ -d "/usr/local/root/bin/" ] ; then
-    . /usr/local/root/bin/thisroot.sh
+# Add ROOT to PATH
+# c.f. ~/build_src for build history
+if [ -d "${HOME}/bin/root/bin" ] ; then
+    . "${HOME}/bin/root/bin/thisroot.sh"
 fi
 
 # Add GPG key
