@@ -39,15 +39,49 @@ if [ -d "/usr/local/texlive/2020/texmf-dist/doc/info" ] ; then
     INFOPATH="/usr/local/texlive/2020/texmf-dist/doc/info:$INFOPATH"
 fi
 
-# Add Mendeley Desktop to PATH
-if [ -d "/opt/mendeleydesktop-1.19.4-linux-x86_64/bin" ] ; then
-    PATH="/opt/mendeleydesktop-1.19.4-linux-x86_64/bin:$PATH"
-fi
-
 # Add ROOT to PATH
 # c.f. ~/build_src for build history
 if [ -d "${HOME}/bin/root/bin" ] ; then
     . "${HOME}/bin/root/bin/thisroot.sh"
+fi
+
+# # Enable CUDA Toolkit 10.2
+# if [ -d "/usr/local/cuda-10.2/bin" ]; then
+#     PATH="/usr/local/cuda-10.2/bin:/usr/local/cuda-10.2/NsightCompute-2019.1${PATH:+:${PATH}}"; export PATH;
+#     LD_LIBRARY_PATH="/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"; export LD_LIBRARY_PATH;
+# fi
+# Enable CUDA Toolkit 10.1
+if [ -d "/usr/local/cuda-10.1/bin" ]; then
+    PATH="/usr/local/cuda-10.1/bin:/usr/local/NVIDIA-Nsight-Compute-2019.1${PATH:+:${PATH}}"; export PATH;
+    LD_LIBRARY_PATH="/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"; export LD_LIBRARY_PATH;
+fi
+
+# Added by cpan
+if [ -d "/home/${USER}/perl5" ]; then
+    PATH="/home/${USER}/perl5/bin${PATH:+:${PATH}}"; export PATH;
+    PERL5LIB="/home/${USER}/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+    PERL_LOCAL_LIB_ROOT="/home/${USER}/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+    PERL_MB_OPT="--install_base \"/home/${USER}/perl5\""; export PERL_MB_OPT;
+    PERL_MM_OPT="INSTALL_BASE=/home/${USER}/perl5"; export PERL_MM_OPT;
+fi
+
+# Add Bazel support
+if [ -d "/home/${USER}/bin" ]; then
+    PATH="/home/${USER}/bin${PATH:+:${PATH}}"; export PATH;
+fi
+if [ -d "/home/${USER}/.bazel/bin" ]; then
+    . "/home/${USER}/.bazel/bin/bazel-complete.bash"
+fi
+
+# Add Rust
+if [ -d "${HOME}/.cargo/bin" ]; then
+    PATH="${HOME}/.cargo/bin${PATH:+:${PATH}}"; export PATH;
+fi
+
+# Add rbenv
+if [ -d "${HOME}/.rbenv/bin" ]; then
+    PATH="${HOME}/.rbenv/bin${PATH:+:${PATH}}"; export PATH;
+    eval "$(rbenv init -)"
 fi
 
 # Add GPG key
@@ -59,4 +93,9 @@ if [ -d "${HOME}/go" ] ; then
 fi
 if [ -d "/usr/local/go" ] ; then
     export PATH="/usr/local/go/bin:${PATH}:${GOPATH}/bin"
+fi
+
+# Add Mendeley Desktop to PATH
+if [ -d "/opt/mendeleydesktop-1.19.4-linux-x86_64/bin" ] ; then
+    PATH="/opt/mendeleydesktop-1.19.4-linux-x86_64/bin:$PATH"
 fi
