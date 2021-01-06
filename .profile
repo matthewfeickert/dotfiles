@@ -45,15 +45,19 @@ if [ -d "${HOME}/bin/root/bin" ] ; then
     . "${HOME}/bin/root/bin/thisroot.sh"
 fi
 
-# # Enable CUDA Toolkit 10.2
-# if [ -d "/usr/local/cuda-10.2/bin" ]; then
-#     PATH="/usr/local/cuda-10.2/bin:/usr/local/cuda-10.2/NsightCompute-2019.1${PATH:+:${PATH}}"; export PATH;
-#     LD_LIBRARY_PATH="/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"; export LD_LIBRARY_PATH;
-# fi
-# Enable CUDA Toolkit 10.1
+# Add CUDA Toolkit 10.1 to PATH
+# /usr/local/cuda-10.1 should be a symlink to /usr/lib/cuda
 if [ -d "/usr/local/cuda-10.1/bin" ]; then
-    PATH="/usr/local/cuda-10.1/bin:/usr/local/NVIDIA-Nsight-Compute-2019.1${PATH:+:${PATH}}"; export PATH;
-    LD_LIBRARY_PATH="/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"; export LD_LIBRARY_PATH;
+    PATH="/usr/local/cuda-10.1/bin:${PATH}"; export PATH;
+elif [ -d "/usr/lib/cuda/bin" ]; then
+    PATH="/usr/lib/cuda/bin:${PATH}"; export PATH;
+fi
+# Add cuDNN to LD_LIBRARY_PATH
+# /usr/local/cuda should be a symlink to /usr/lib/cuda
+if [ -d "/usr/local/cuda/lib64" ]; then
+    LD_LIBRARY_PATH="/usr/local/cuda/lib64:${LD_LIBRARY_PATH}"; export LD_LIBRARY_PATH;
+elif [ -d "/usr/lib/cuda/lib64" ]; then
+    LD_LIBRARY_PATH="/usr/lib/cuda/lib64:${LD_LIBRARY_PATH}"; export LD_LIBRARY_PATH;
 fi
 
 # Added by cpan
