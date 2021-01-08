@@ -1,6 +1,7 @@
 alias l='ls -lhF'
 
 alias python=python3
+alias system-python=/usr/bin/python3
 
 alias open=xdg-open
 alias specs=screenfetch
