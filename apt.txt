@@ -58,7 +58,7 @@ mlocate
 ncurses-doc
 nvidia-container-runtime
 nvidia-cuda-toolkit
-nvidia-driver-455
+nvidia-driver-460
 openssh-server
 pandoc
 perl-tk # tlmgr
