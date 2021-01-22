@@ -11,19 +11,6 @@ source "${ATLAS_LOCAL_ROOT_BASE}/user/atlasLocalSetup.sh" --quiet || echo "~~~ER
 
 export RUCIO_ACCOUNT=feickert
 
-# Setup default LCG view
-default_LCG_release="LCG_98python3"
-default_LCG_platform="x86_64-centos7-gcc8-opt"
-printf "\nlsetup 'views ${default_LCG_release} ${default_LCG_platform}'\n"
-lsetup "views ${default_LCG_release} ${default_LCG_platform}"
-# strip out LGG view site-packages from PYTHONPATH to allow venv control of pip
-IFS=':' read -ra _LCG_paths <<< "${PYTHONPATH}"
-for idx in "${!_LCG_paths[@]}"
-do
-    [[ "${_LCG_paths[$idx]}" == *"site-packages"* ]] && unset -v "_LCG_paths[${idx}]"
-done
-export PYTHONPATH=$(IFS=:; echo "${_LCG_paths[*]}")
-
 # Ensure local virtualenv setup
 if [ ! -f "${HOME}/opt/venv/bin/virtualenv" ]; then
     curl -sL --location --output /tmp/virtualenv.pyz https://bootstrap.pypa.io/virtualenv.pyz
@@ -35,7 +22,23 @@ if [ ! -f "${HOME}/opt/venv/bin/virtualenv" ]; then
     ln -s ~/opt/venv/bin/virtualenv ~/bin/virtualenv
 fi
 
-# default venv from `virtualenv "${HOME}/.venvs/base"`
-if [ -d "${HOME}/.venvs/base" ]; then
-	  source "${HOME}/.venvs/base/bin/activate"
-fi
+# Use a function over sourcing on load to reduce login time
+function setupENV {
+    # Setup default LCG view
+    local default_LCG_release="LCG_98python3"
+    local default_LCG_platform="x86_64-centos7-gcc8-opt"
+    printf "\nlsetup 'views ${default_LCG_release} ${default_LCG_platform}'\n"
+    lsetup "views ${default_LCG_release} ${default_LCG_platform}"
+    # strip out LGG view site-packages from PYTHONPATH to allow venv control of pip
+    IFS=':' read -ra _LCG_paths <<< "${PYTHONPATH}"
+    for idx in "${!_LCG_paths[@]}"
+    do
+        [[ "${_LCG_paths[$idx]}" == *"site-packages"* ]] && unset -v "_LCG_paths[${idx}]"
+    done
+    export PYTHONPATH=$(IFS=:; echo "${_LCG_paths[*]}")
+
+    # default venv from `virtualenv "${HOME}/.venvs/base"`
+    if [ -d "${HOME}/.venvs/base" ]; then
+        source "${HOME}/.venvs/base/bin/activate"
+    fi
+}
