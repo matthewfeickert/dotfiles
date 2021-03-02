@@ -109,3 +109,6 @@ fi
 if [ -d "/opt/mendeleydesktop-1.19.4-linux-x86_64/bin" ] ; then
     PATH="/opt/mendeleydesktop-1.19.4-linux-x86_64/bin:$PATH"
 fi
+
+# Ensure LD_LIBRARY_PATH exists if application unsets it
+_PRESERVE_LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"; export _PRESERVE_LD_LIBRARY_PATH;
