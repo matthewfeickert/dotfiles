@@ -1,0 +1,14 @@
+# analysis
+scipy
+matplotlib
+pandas
+h5py
+scikit-learn
+pandamonium
+# tooling
+pipx
+black
+pre-commit
+# other
+rich
+requests
