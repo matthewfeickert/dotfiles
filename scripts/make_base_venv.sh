@@ -9,8 +9,5 @@ fi
 if [[ -d "${HOME}/.venvs/base" ]]; then
   source "${HOME}/.venvs/base/bin/activate"
   python -m pip install --quiet --upgrade pip setuptools wheel
-  python -m pip install --quiet \
-    numpy \
-    scipy \
-    pandamonium
+  python -m pip install --quiet --requirement base-requirements.txt
 fi
