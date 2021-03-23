@@ -29,7 +29,8 @@ fi
 # User added
 
 # Add TeX Live to PATH
-# For tlmgr support run: sudo chown -R "${USER}" /usr/local/texlive
+# For tlmgr support if `tlmgr init-usertree` isn't enough run:
+# sudo chown -R "${USER}" /usr/local/texlive
 if [ -d "/usr/local/texlive/2020/bin/x86_64-linux" ] ; then
     PATH="/usr/local/texlive/2020/bin/x86_64-linux:$PATH"
 fi
