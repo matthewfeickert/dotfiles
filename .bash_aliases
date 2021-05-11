@@ -11,9 +11,10 @@ alias cleanContainers='docker container prune'
 alias cleanImages='docker image prune'
 
 # cluster logins
-alias lxplus='ssh -CX feickert@lxplus.cern.ch'
-alias beastmode='ssh -CX feickert@beast.physics.illinois.edu'
-alias atlasconnect='ssh -CX feickert@login.usatlas.org'
+# use ~/.ssh/config for details
+alias lxplus='ssh LXPLUS'
+alias beastmode='ssh Beast'
+alias atlasconnect='ssh ATLASConnect'
 alias bluewaters='ssh -CX feickert@bw.ncsa.illinois.edu'
 
 # tools
