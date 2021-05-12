@@ -15,7 +15,7 @@ alias cleanImages='docker image prune'
 alias lxplus='ssh LXPLUS'
 alias beastmode='ssh Beast'
 alias atlasconnect='ssh ATLASConnect'
-alias bluewaters='ssh -CX feickert@bw.ncsa.illinois.edu'
+alias bluewaters='ssh BLUEWATERS'
 
 # tools
 
