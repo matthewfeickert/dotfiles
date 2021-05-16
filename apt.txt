@@ -15,6 +15,7 @@ fonts-stix
 fonts-texgyre # texgyreheros font
 fortune
 gfortran
+gimp
 git
 git-doc
 git-email
