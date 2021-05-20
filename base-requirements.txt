@@ -12,3 +12,4 @@ pre-commit
 # other
 rich
 requests
+youtube-dl
