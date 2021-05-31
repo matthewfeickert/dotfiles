@@ -78,3 +78,15 @@ fi
 if [ -f "/tmp/.bash_profile" ]; then
     . /tmp/.bash_profile
 fi
+
+# User Functions
+
+# c.f. https://gist.github.com/matthewfeickert/498cd93af35b6664caab5dece20342e1
+# remember to xhost +
+function root-docker () {
+    docker run --rm -ti \
+        -e DISPLAY="${DISPLAY}" \
+        -v /tmp/.X11-unix:/tmp/.X11-unix \
+        -v "${HOME}":"${HOME}" \
+        atlasamglab/stats-base:root6.24.00 "root -l ${1}"
+}
