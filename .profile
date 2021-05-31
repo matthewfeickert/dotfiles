@@ -43,8 +43,8 @@ fi
 
 # Add ROOT to PATH
 # c.f. ~/build_src for build history
-if [ -d "${HOME}/bin/root/bin" ] ; then
-    . "${HOME}/bin/root/bin/thisroot.sh"
+if [ -d "${HOME}/bin/root-cern/bin" ] ; then
+    . "${HOME}/bin/root-cern/bin/thisroot.sh"
 fi
 
 # Add CUDA Toolkit 10.1 to PATH
