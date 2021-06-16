@@ -5,6 +5,7 @@ pandas
 h5py
 scikit-learn
 pandamonium
+h5glance
 # tooling
 pipx
 black
