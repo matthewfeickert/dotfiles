@@ -17,16 +17,17 @@ fi
 
 # Add pyenv
 if [ -d "${HOME}/.pyenv/bin" ]; then
-    export PYENV_ROOT="${HOME}/.pyenv"
-    export PATH="${PYENV_ROOT}/bin:${PATH}"
-
-    if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
-    fi
 
-    # Add pyenv-virtualenv
+    # Place pyenv shims on path
+    if [[ ":${PATH}:" != *":$(pyenv root)/shims:"* ]]; then
+        eval "$(pyenv init --path)"
+    fi
     if [ -d "${HOME}/.pyenv/plugins/pyenv-virtualenv" ]; then
-        eval "$(pyenv virtualenv-init -)"
+        # Place pyenv-virtualenv shims on path
+        if [[ ":${PATH}:" != *":$(pyenv root)/plugins/pyenv-virtualenv/shims:"* ]]; then
+            eval "$(pyenv virtualenv-init -)"
+        fi
     fi
 
     # Allow for prompt updating on venv switch
@@ -44,7 +45,7 @@ if [ -d "${HOME}/.pyenv/bin" ]; then
     export PROMPT_COMMAND='updatePrompt'
 
     # default venv
-    if [ -d "${HOME}/.pyenv/versions/3.8.6/envs/base" ]; then
+    if [ -d "${HOME}/.pyenv/versions/3.9.6/envs/base" ]; then
         pyenv activate base
     fi
 
