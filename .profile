@@ -114,21 +114,5 @@ if [ -d "${HOME}/.rbenv/bin" ]; then
     eval "$(rbenv init -)"
 fi
 
-# Add GPG key
-export GPG_TTY=$(tty)
-
-# Add Go to PATH
-if [ -d "${HOME}/go" ] ; then
-    export GOPATH="${HOME}/go"
-fi
-if [ -d "/usr/local/go" ] ; then
-    export PATH="/usr/local/go/bin:${PATH}:${GOPATH}/bin"
-fi
-
-# Add Mendeley Desktop to PATH
-if [ -d "/opt/mendeleydesktop-1.19.4-linux-x86_64/bin" ] ; then
-    PATH="/opt/mendeleydesktop-1.19.4-linux-x86_64/bin:$PATH"
-fi
-
 # Ensure LD_LIBRARY_PATH exists if application unsets it
 _PRESERVE_LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"; export _PRESERVE_LD_LIBRARY_PATH;
