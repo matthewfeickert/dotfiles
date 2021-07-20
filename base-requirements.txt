@@ -6,10 +6,14 @@ h5py
 scikit-learn
 pandamonium
 h5glance
+# jupyter
+jupyter
+jupyterlab
 # tooling
 pipx
 black
 pre-commit
+isort
 # other
 rich
 requests
