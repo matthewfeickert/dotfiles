@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+# Add temporary PATH modification until next load of .profile
+if [ -f "/tmp/.profile" ]; then
+    . /tmp/.profile
+fi
+if [ -f "/tmp/.bash_profile" ]; then
+    . /tmp/.bash_profile
+fi
+
 # Enable .pythonrc.py
 if [ -f "${HOME}/.pythonrc.py" ]; then
     export PYTHONSTARTUP="${HOME}/.pythonrc.py"
@@ -70,14 +78,6 @@ export GPG_TTY=$(tty)
 # Ensure LD_LIBRARY_PATH exists if application unsets it
 if [ -z "${LD_LIBRARY_PATH}" ]; then
     LD_LIBRARY_PATH="${_PRESERVE_LD_LIBRARY_PATH}"; export LD_LIBRARY_PATH;
-fi
-
-# Add temporary PATH modification until next load of .profile
-if [ -f "/tmp/.profile" ]; then
-    . /tmp/.profile
-fi
-if [ -f "/tmp/.bash_profile" ]; then
-    . /tmp/.bash_profile
 fi
 
 # User Functions
