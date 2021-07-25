@@ -1,6 +1,6 @@
 bat # symlinked to batcat
 caffeine
-ccache # ROOT
+ccache # ROOT, SciPy
 cmake
 containerd.io
 cowsay
@@ -14,7 +14,7 @@ fonts-freefont-otf
 fonts-stix
 fonts-texgyre # texgyreheros font
 fortune
-gfortran
+gfortran  # SciPy
 gimp
 git
 git-doc
@@ -27,6 +27,7 @@ hdf5-tools
 htop
 jq
 krb5-user # ROOT
+libatlas-base-dev  # SciPy
 libavahi-compat-libdnssd-dev # ROOT
 libblas-dev
 libcfitsio-dev # ROOT
@@ -36,13 +37,16 @@ libfreeimage3 # cuDNN
 libfreeimage-dev # cuDNN
 libftgl-dev # ROOT
 libglew-dev # ROOT
+libgmp-dev  # SciPy
 libgsl0-dev # ROOT
 libkrb5-dev # ROOT
-liblapack-dev
+liblapack-dev  # SciPy
 liblapack-doc
 libldap-dev # ROOT
 liblzma-dev # python 3
 liblzma-doc
+libmpc-dev  # SciPy
+libmpfr-dev  # SciPy
 libmysqlclient-dev # ROOT
 libncurses5-dev # python 3
 libncurses-dev # python 3
