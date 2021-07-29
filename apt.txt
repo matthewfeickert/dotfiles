@@ -9,6 +9,7 @@ docker-ce
 docker-ce-cli
 dot2unix
 ffmpeg
+flatpak
 font-manager
 fonts-freefont-otf
 fonts-stix
@@ -21,6 +22,7 @@ git-doc
 git-email
 gitweb
 glmark2
+gnome-software-plugin-flatpak
 gnome-tweak-tool # remap CapsLock to Ctrl
 graphviz-dev # ROOT
 hdf5-tools
