@@ -5,6 +5,10 @@ alias system-python=/usr/bin/python3
 # Match CentOS's /usr/libexec/platform-python
 alias platform-python=system-python
 
+# clipboard < file.txt
+# echo file.txt | clipboard
+alias clipboard='xclip -selection clipboard'
+
 alias open=xdg-open
 alias specs=screenfetch
 alias HUD=htop
