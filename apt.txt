@@ -11,6 +11,7 @@ dot2unix
 ffmpeg
 flatpak
 font-manager
+fonts-font-awesome
 fonts-freefont-otf
 fonts-stix
 fonts-texgyre # texgyreheros font
