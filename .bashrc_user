@@ -91,11 +91,16 @@ function root-docker () {
         input_path=$(pwd)
     fi
 
-    if [[ "${input_path::7}" == "root://" ]]; then
-        # Accessing file over xrootd
-        file_path="${input_path}"
+    if [[ "${input_path}" == "shell" ]]; then
+        cmd='/bin/bash'
     else
-        file_path=$(readlink -f ${input_path})
+        if [[ "${input_path::7}" == "root://" ]]; then
+            # Accessing file over xrootd
+            file_path="${input_path}"
+        else
+            file_path=$(readlink -f ${input_path})
+        fi
+        cmd="root -l ${file_path}"
     fi
 
     docker run --rm -ti \
@@ -104,5 +109,5 @@ function root-docker () {
         -v /tmp/"krb5cc_$(id -u ${USER})":/tmp/krb5cc_0 \
         -v /tmp/:/tmp/ \
         -v "${HOME}":"${HOME}" \
-        atlasamglab/stats-base:root6.24.06 "root -l ${file_path}"
+        atlasamglab/stats-base:root6.24.06 "${cmd}"
 }
