@@ -93,6 +93,7 @@ function root-docker () {
     docker run --rm -ti \
         -e DISPLAY="${DISPLAY}" \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
+        -v /tmp/"krb5cc_$(id -u ${USER})":/tmp/krb5cc_0 \
         -v /tmp/:/tmp/ \
         -v "${HOME}":"${HOME}" \
         atlasamglab/stats-base:root6.24.06 "root -l $(readlink -f ${input_path})"
