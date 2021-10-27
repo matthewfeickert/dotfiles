@@ -13,6 +13,9 @@ if [ -f "${HOME}/.pythonrc.py" ]; then
     export PYTHONSTARTUP="${HOME}/.pythonrc.py"
 fi
 
+# Ensure that pip can't install outside a virtual environment
+export PIP_REQUIRE_VIRTUALENV=true
+
 # Ensure local virtualenv setup
 if [ ! -f "${HOME}/opt/venv/bin/virtualenv" ]; then
     curl -sL --location --output /tmp/virtualenv.pyz https://bootstrap.pypa.io/virtualenv.pyz
