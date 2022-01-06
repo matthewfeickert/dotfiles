@@ -1,3 +1,4 @@
+arp-scan
 bat # symlinked to batcat
 caffeine
 ccache # ROOT, SciPy
@@ -65,6 +66,7 @@ llvm
 lolcat
 mlocate
 ncurses-doc
+nmap
 nvidia-container-runtime
 nvidia-cuda-toolkit
 nvidia-driver-460
