@@ -43,6 +43,7 @@ libftgl-dev # ROOT
 libglew-dev # ROOT
 libgmp-dev  # SciPy
 libgsl0-dev # ROOT
+libhdf5-dev # h5py dev
 libkrb5-dev # ROOT
 liblapack-dev  # SciPy
 liblapack-doc
