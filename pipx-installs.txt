@@ -1,0 +1,5 @@
+# Tooling that is useful to have as global CLIs,
+# and so should be installed with pipx.
+pepotron
+rich-cli
+youtube-dl
