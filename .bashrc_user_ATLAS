@@ -11,6 +11,11 @@ source "${ATLAS_LOCAL_ROOT_BASE}/user/atlasLocalSetup.sh" --quiet || echo "~~~ER
 
 export RUCIO_ACCOUNT=feickert
 
+# Ensure EDITOR is set for use by bash's 'edit-and-execute-command'
+if [ -z "${EDITOR}" ]; then
+    export EDITOR="$(command -v vim)"
+fi
+
 # Ensure local virtualenv setup
 if [ ! -f "${HOME}/opt/venv/bin/virtualenv" ]; then
     curl -sL --location --output /tmp/virtualenv.pyz https://bootstrap.pypa.io/virtualenv.pyz

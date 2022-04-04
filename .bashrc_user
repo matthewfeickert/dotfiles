@@ -83,6 +83,11 @@ if [ -z "${LD_LIBRARY_PATH}" ]; then
     LD_LIBRARY_PATH="${_PRESERVE_LD_LIBRARY_PATH}"; export LD_LIBRARY_PATH;
 fi
 
+# Ensure EDITOR is set for use by bash's 'edit-and-execute-command'
+if [ -z "${EDITOR}" ]; then
+    export EDITOR="$(command -v vim)"
+fi
+
 # User Functions
 
 # c.f. https://gist.github.com/matthewfeickert/498cd93af35b6664caab5dece20342e1
