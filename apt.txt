@@ -102,3 +102,4 @@ xclip
 xlibmesa-glu-dev # ROOT
 zlib1g-dev
 zlibc
+zsh
