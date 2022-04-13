@@ -8,6 +8,10 @@ if [ -f "/tmp/.bash_profile" ]; then
     . /tmp/.bash_profile
 fi
 
+# Avoid CVE-2022-24765
+# c.f. https://github.blog/2022-04-12-git-security-vulnerability-announced/
+export GIT_CEILING_DIRECTORIES="/home"
+
 # Enable .pythonrc.py
 if [ -f "${HOME}/.pythonrc.py" ]; then
     export PYTHONSTARTUP="${HOME}/.pythonrc.py"
