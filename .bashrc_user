@@ -60,7 +60,7 @@ if [ -d "${HOME}/.pyenv/bin" ]; then
     export PROMPT_COMMAND='updatePrompt'
 
     # default venv
-    if [ -d "${HOME}/.pyenv/versions/3.9.6/envs/base" ]; then
+    if [ -d "${HOME}/.pyenv/versions/base" ]; then
         pyenv activate base
     fi
 
