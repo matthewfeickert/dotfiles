@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -e
+[ -n "${PYENV_DEBUG}" ] && set -x
+
+PYENV_VERSION=pipx exec "${PYENV_ROOT}/libexec/pyenv" exec pipx "$@"
