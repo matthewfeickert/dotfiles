@@ -74,6 +74,11 @@ if [ -f /opt/_venv-activate/_venv-activate.sh ]; then
     . /opt/_venv-activate/_venv-activate.sh
 fi
 
+# Enable pipx shell completions
+if [ -f "${HOME}/bin/pipx" ]; then
+    eval "$(register-python-argcomplete pipx)"
+fi
+
 # Enable h5ls tab completion
 if [ -f /opt/_h5ls/_h5ls.sh ]; then
     . /opt/_h5ls/_h5ls.sh
