@@ -27,7 +27,6 @@ gitweb
 glmark2
 gnome-software-plugin-flatpak
 gnome-tweak-tool # remap CapsLock to Ctrl
-libgraphviz-dev # ROOT
 hdf5-tools
 htop
 jq
@@ -42,7 +41,9 @@ libfreeimage3 # cuDNN
 libfreeimage-dev # cuDNN
 libftgl-dev # ROOT
 libglew-dev # ROOT
+libglu1-mesa-dev # ROOT
 libgmp-dev  # SciPy
+libgraphviz-dev # ROOT
 libgsl-dev # ROOT
 libhdf5-dev # h5py dev
 libkrb5-dev # ROOT
@@ -100,7 +101,6 @@ ubuntu-restricted-extras
 vim
 vlc
 xclip
-libglu1-mesa-dev # ROOT
 zlib1g-dev
 zlibc
 zsh
