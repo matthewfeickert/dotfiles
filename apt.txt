@@ -7,8 +7,8 @@ cmake
 containerd
 cowsay
 curl
-docker-ce
-docker-ce-cli
+# docker-ce
+# docker-ce-cli
 dos2unix
 ffmpeg
 flatpak
