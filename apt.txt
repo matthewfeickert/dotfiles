@@ -1,3 +1,4 @@
+# To use: apt install $(cat apt.txt | cut -f1 -d "#" | sed '/^$/d')
 arp-scan
 bat # symlinked to batcat
 caffeine
