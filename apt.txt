@@ -9,7 +9,7 @@ cowsay
 curl
 docker-ce
 docker-ce-cli
-dot2unix
+dos2unix
 ffmpeg
 flatpak
 font-manager
