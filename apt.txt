@@ -26,7 +26,7 @@ git-email
 gitweb
 glmark2
 gnome-software-plugin-flatpak
-gnome-tweak-tool # remap CapsLock to Ctrl
+gnome-tweaks # remap CapsLock to Ctrl
 hdf5-tools
 htop
 jq
