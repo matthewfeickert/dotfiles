@@ -71,7 +71,7 @@ ncurses-doc
 nmap
 nvidia-container-runtime
 nvidia-cuda-toolkit
-nvidia-driver-460
+# nvidia-driver-460 # curent nvidia driver
 openssh-server
 pandoc
 pdfsam
