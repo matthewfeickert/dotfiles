@@ -4,7 +4,7 @@ bat # symlinked to batcat
 caffeine
 ccache # ROOT, SciPy
 cmake
-# containerd.io
+containerd
 cowsay
 curl
 docker-ce
