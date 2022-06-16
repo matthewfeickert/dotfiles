@@ -4,7 +4,7 @@ bat # symlinked to batcat
 caffeine
 ccache # ROOT, SciPy
 cmake
-containerd.io
+# containerd.io
 cowsay
 curl
 docker-ce
@@ -71,7 +71,7 @@ lolcat
 mlocate
 ncurses-doc
 nmap
-nvidia-container-runtime
+# nvidia-container-runtime
 nvidia-cuda-toolkit
 # nvidia-driver-460 # curent nvidia driver
 openssh-server
