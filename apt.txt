@@ -17,7 +17,7 @@ fonts-font-awesome
 fonts-freefont-otf
 fonts-stix
 fonts-texgyre # texgyreheros font
-fortune
+fortune-mod
 gfortran  # SciPy
 gimp
 git
@@ -27,7 +27,7 @@ gitweb
 glmark2
 gnome-software-plugin-flatpak
 gnome-tweak-tool # remap CapsLock to Ctrl
-graphviz-dev # ROOT
+libgraphviz-dev # ROOT
 hdf5-tools
 htop
 jq
@@ -43,7 +43,7 @@ libfreeimage-dev # cuDNN
 libftgl-dev # ROOT
 libglew-dev # ROOT
 libgmp-dev  # SciPy
-libgsl0-dev # ROOT
+libgsl-dev # ROOT
 libhdf5-dev # h5py dev
 libkrb5-dev # ROOT
 liblapack-dev  # SciPy
@@ -77,7 +77,7 @@ pandoc
 pdfsam
 perl-tk # tlmgr
 python3-dev
-python3-numpy-dev # ROOT
+python3-numpy # ROOT
 python3-textile # python 3
 python3-tk
 python3-tzlocal
@@ -100,7 +100,7 @@ ubuntu-restricted-extras
 vim
 vlc
 xclip
-xlibmesa-glu-dev # ROOT
+libglu1-mesa-dev # ROOT
 zlib1g-dev
 zlibc
 zsh
