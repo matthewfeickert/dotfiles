@@ -13,6 +13,7 @@ dos2unix
 ffmpeg
 flatpak
 font-manager
+fonts-dejavu # Dejavu font
 fonts-font-awesome
 fonts-freefont-otf
 fonts-stix
@@ -95,12 +96,11 @@ sshpass
 t1-cyrillic # Free Chancery font
 tcllib # globus
 tk-dev # python 3
-ttf-dejavu # Dejavu font
 ttf-mscorefonts-installer # Georgia font in LaTeX
 ubuntu-restricted-extras
 vim
 vlc
 xclip
+zlib1g
 zlib1g-dev
-zlibc
 zsh
