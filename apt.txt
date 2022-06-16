@@ -73,7 +73,7 @@ ncurses-doc
 nmap
 # nvidia-container-runtime # https://nvidia.github.io/nvidia-container-runtime/
 nvidia-cuda-toolkit
-# nvidia-driver-460 # curent nvidia driver
+# nvidia-driver-510 # curent nvidia driver
 openssh-server
 pandoc
 pdfsam
