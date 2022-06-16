@@ -83,7 +83,7 @@ python3-textile # python 3
 python3-tk
 python3-tzlocal
 python3-venv
-qt5-default # ROOT
+qtbase5-dev-tools # ROOT
 r-base
 readline-doc
 screenfetch
