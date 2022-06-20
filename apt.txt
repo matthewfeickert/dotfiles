@@ -1,3 +1,4 @@
+# Packages for Ubuntu 22.04
 # To use: apt install $(cat apt.txt | cut -f1 -d "#" | sed '/^$/d')
 arp-scan
 bat # symlinked to batcat
@@ -7,7 +8,7 @@ cmake
 containerd
 cowsay
 curl
-# docker-ce
+# docker-ce  # https://docs.docker.com/engine/install/ubuntu/
 # docker-ce-cli
 dos2unix
 ffmpeg
