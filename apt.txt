@@ -1,22 +1,25 @@
+# Packages for Ubuntu 22.04
+# To use: apt install $(cat apt.txt | cut -f1 -d "#" | sed '/^$/d')
 arp-scan
 bat # symlinked to batcat
 caffeine
 ccache # ROOT, SciPy
 cmake
-containerd.io
+containerd
 cowsay
 curl
-docker-ce
-docker-ce-cli
-dot2unix
+# docker-ce  # https://docs.docker.com/engine/install/ubuntu/
+# docker-ce-cli
+dos2unix
 ffmpeg
 flatpak
 font-manager
+fonts-dejavu # Dejavu font
 fonts-font-awesome
 fonts-freefont-otf
 fonts-stix
 fonts-texgyre # texgyreheros font
-fortune
+fortune-mod
 gfortran  # SciPy
 gimp
 git
@@ -25,8 +28,7 @@ git-email
 gitweb
 glmark2
 gnome-software-plugin-flatpak
-gnome-tweak-tool # remap CapsLock to Ctrl
-graphviz-dev # ROOT
+gnome-tweaks # remap CapsLock to Ctrl
 hdf5-tools
 htop
 jq
@@ -41,8 +43,10 @@ libfreeimage3 # cuDNN
 libfreeimage-dev # cuDNN
 libftgl-dev # ROOT
 libglew-dev # ROOT
+libglu1-mesa-dev # ROOT
 libgmp-dev  # SciPy
-libgsl0-dev # ROOT
+libgraphviz-dev # ROOT
+libgsl-dev # ROOT
 libhdf5-dev # h5py dev
 libkrb5-dev # ROOT
 liblapack-dev  # SciPy
@@ -68,20 +72,20 @@ lolcat
 mlocate
 ncurses-doc
 nmap
-nvidia-container-runtime
+# nvidia-container-runtime # https://nvidia.github.io/nvidia-container-runtime/
 nvidia-cuda-toolkit
-nvidia-driver-460
 openssh-server
 pandoc
 pdfsam
 perl-tk # tlmgr
 python3-dev
-python3-numpy-dev # ROOT
+python3-full  # includes python3-tk, python3-venv
+python3-numpy # ROOT
 python3-textile # python 3
 python3-tk
 python3-tzlocal
 python3-venv
-qt5-default # ROOT
+qtbase5-dev-tools # ROOT
 r-base
 readline-doc
 screenfetch
@@ -93,13 +97,11 @@ sshpass
 t1-cyrillic # Free Chancery font
 tcllib # globus
 tk-dev # python 3
-ttf-dejavu # Dejavu font
 ttf-mscorefonts-installer # Georgia font in LaTeX
 ubuntu-restricted-extras
 vim
 vlc
 xclip
-xlibmesa-glu-dev # ROOT
+zlib1g
 zlib1g-dev
-zlibc
 zsh
