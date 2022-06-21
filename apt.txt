@@ -60,6 +60,7 @@ libmysqlclient-dev # ROOT
 libncurses5-dev # python 3
 libncurses-dev # python 3
 libpcre3-dev # ROOT
+libqt5webkit5  # GlobalProtect VPN
 libreadline-dev # python 3
 libsqlite3-dev # python 3
 libssl-dev # python 3
