@@ -36,6 +36,7 @@ krb5-user # ROOT
 libatlas-base-dev  # SciPy
 libavahi-compat-libdnssd-dev # ROOT
 libblas-dev
+libcanberra-gtk-module # ROOT
 libcfitsio-dev # ROOT
 libffi-dev # python 3
 libfftw3-dev # ROOT
