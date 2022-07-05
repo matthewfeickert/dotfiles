@@ -38,3 +38,5 @@
 	autostash = true
 [feature]
 	manyFiles = true
+[pager]
+	diff = false
