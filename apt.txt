@@ -100,7 +100,7 @@ t1-cyrillic # Free Chancery font
 tcllib # globus
 tk-dev # python 3
 ttf-mscorefonts-installer # Georgia font in LaTeX
-ubuntu-restricted-extras
+ubuntu-restricted-extras  # multimedia codecs
 vim
 vlc
 xclip
