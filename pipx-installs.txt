@@ -11,6 +11,7 @@ norwegianblue
 nox
 pandamonium
 pepotron
+pip-tools
 pycowsay
 restview
 rich-cli
