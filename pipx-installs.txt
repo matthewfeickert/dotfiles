@@ -6,6 +6,7 @@ cffconvert
 codemetapy
 cookiecutter
 grayskull
+jupyter-repo2docker
 nbpreview
 norwegianblue
 nox
