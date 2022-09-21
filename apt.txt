@@ -66,6 +66,7 @@ libreadline-dev # python 3
 libsqlite3-dev # python 3
 libssl-dev # python 3
 libssl-doc
+libtbb-dev # ROOT
 libxml2-dev # python 3
 libxmlsec1-dev # python 3
 libxpm-dev # ROOT
