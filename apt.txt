@@ -91,6 +91,7 @@ python3-venv
 qtbase5-dev-tools # ROOT
 r-base
 readline-doc
+ripgrep
 screenfetch
 shellcheck
 speedtest-cli
