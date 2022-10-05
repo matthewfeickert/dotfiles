@@ -29,6 +29,7 @@ gitweb
 glmark2
 gnome-software-plugin-flatpak
 gnome-tweaks # remap CapsLock to Ctrl
+gnuplot
 hdf5-tools
 htop
 jq
