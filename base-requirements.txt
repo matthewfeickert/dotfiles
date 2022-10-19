@@ -15,6 +15,7 @@ black
 pre-commit
 isort
 # other
+imageio
 rich
 requests
 youtube-dl
