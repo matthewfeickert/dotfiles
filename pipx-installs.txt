@@ -5,6 +5,7 @@ build
 cffconvert
 codemetapy
 cookiecutter
+coolname
 grayskull
 jupyter-repo2docker
 nbpreview
