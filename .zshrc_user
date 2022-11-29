@@ -5,3 +5,8 @@ bashcompinit
 
 # use the .bashrc_user file to avoid code duplication
 source "${HOME}/.bashrc_user"
+
+# Setup rustup environment
+if [ -f "${HOME}/.cargo/env" ] ; then
+    . "${HOME}/.cargo/env"
+fi
