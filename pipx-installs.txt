@@ -15,8 +15,8 @@ pandamonium
 pepotron
 pip-tools
 pycowsay
+pytube
 restview
 rich-cli
 uproot-browser
 visidata
-youtube-dl

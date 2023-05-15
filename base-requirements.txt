@@ -18,4 +18,4 @@ isort
 imageio
 rich
 requests
-youtube-dl
+pytube
