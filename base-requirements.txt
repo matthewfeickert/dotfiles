@@ -4,6 +4,7 @@ matplotlib
 pandas
 h5py
 scikit-learn
+hist[plot]
 pandamonium
 h5glance
 # jupyter
