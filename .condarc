@@ -1,0 +1,6 @@
+channels:
+  - conda-forge
+  - nodefaults
+channel_priority: strict
+# micromamba config set auto_activate_base false
+auto_activate_base: false
