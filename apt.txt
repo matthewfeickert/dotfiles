@@ -74,6 +74,7 @@ libxpm-dev # ROOT
 libyaml-dev  # https://github.com/yaml/libyaml
 llvm
 lolcat
+miller
 mlocate
 ncurses-doc
 nmap
