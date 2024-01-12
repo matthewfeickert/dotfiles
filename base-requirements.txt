@@ -5,11 +5,17 @@ pandas
 h5py
 scikit-learn
 hist[plot]
-pandamonium
 h5glance
+jax
+jaxlib
+# HEP tooling
+pandamonium
+xrootd
+uproot-browser
 # jupyter
-jupyter
+notebook
 jupyterlab
+jupytext
 # tooling
 pipx
 black
@@ -19,4 +25,4 @@ isort
 imageio
 rich
 requests
-pytube
+pytubefix
