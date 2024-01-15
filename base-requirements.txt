@@ -12,6 +12,7 @@ jaxlib
 pandamonium
 xrootd
 uproot-browser
+odapt
 # jupyter
 notebook
 jupyterlab
