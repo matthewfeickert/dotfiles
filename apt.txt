@@ -14,9 +14,11 @@ dos2unix
 ffmpeg
 flatpak
 font-manager
+fonts-comic-neue
 fonts-dejavu # Dejavu font
 fonts-font-awesome
 fonts-freefont-otf
+fonts-humor-sans
 fonts-stix
 fonts-texgyre # texgyreheros font
 fortune-mod
