@@ -23,7 +23,6 @@ fonts-stix
 fonts-texgyre # texgyreheros font
 fortune-mod
 gfortran  # SciPy
-gimp
 git
 git-doc
 git-email

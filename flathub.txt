@@ -1,0 +1,5 @@
+# To install: flatpak install $(cat flathub.txt | cut -f1 -d "#" | sed '/^$/d')
+flathub org.gimp.GIMP
+flathub org.inkscape.Inkscape
+flathub md.obsidian.Obsidian
+flathub org.shotcut.Shotcut
