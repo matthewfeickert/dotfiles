@@ -129,6 +129,24 @@ function root-docker () {
         atlasamglab/stats-base:root6.24.06 "${cmd}"
 }
 
+# c.f.Richard McElreath's 2024-01-26 tweet
+# https://twitter.com/rlmcelreath/status/1750807826883027304/
+function bibtex-from-doi () {
+    # Examples:
+    # bibtex-from-doi 10.21105/joss.02823
+    # bibtex-from-doi https://doi.org/10.21105/joss.02823
+    local doi
+    doi="${1}"
+    if [ -z "${doi}" ]; then
+        echo "Please provide a DOI of the form 10.prefix/suffix"
+        return 1
+    fi
+    # check if the doi is actually a url and if so strip of the url part
+    if [[ "${doi}" == "https://doi.org/"* ]]; then
+        doi="${doi:16}"
+    fi
+    curl --location --header "Accept: application/x-bibtex" "https://doi.org/${doi}"
+}
 
 # If new information was addded to .profile in this session
 # defer to a tmp profile until the next session.
