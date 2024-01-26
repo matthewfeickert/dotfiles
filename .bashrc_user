@@ -128,3 +128,10 @@ function root-docker () {
         -v "${HOME}":"${HOME}" \
         atlasamglab/stats-base:root6.24.06 "${cmd}"
 }
+
+
+# If new information was addded to .profile in this session
+# defer to a tmp profile until the next session.
+if [ -f /tmp/.profile ]; then
+    . /tmp/.profile
+fi
