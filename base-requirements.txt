@@ -12,7 +12,7 @@ jaxlib
 pandamonium
 xrootd
 uproot-browser
-odapt
+hepconvert
 # jupyter
 notebook
 jupyterlab
