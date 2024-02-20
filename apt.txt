@@ -1,6 +1,7 @@
 # Packages for Ubuntu 22.04
 # To use: apt install $(cat apt.txt | cut -f1 -d "#" | sed '/^$/d')
 arp-scan
+autoconf  # scikit-hep/fastjet
 bat # symlinked to batcat
 caffeine
 ccache # ROOT, SciPy
@@ -39,6 +40,7 @@ krb5-user # ROOT
 libatlas-base-dev  # SciPy
 libavahi-compat-libdnssd-dev # ROOT
 libblas-dev
+libboost-dev  # scikit-hep/fastjet
 libcanberra-gtk-module # ROOT
 libcfitsio-dev # ROOT
 libffi-dev # python 3
@@ -70,6 +72,7 @@ libsqlite3-dev # python 3
 libssl-dev # python 3
 libssl-doc
 libtbb-dev # ROOT
+libtool  # scikit-hep/fastjet
 libxml2-dev # python 3
 libxmlsec1-dev # python 3
 libxpm-dev # ROOT
@@ -105,6 +108,7 @@ speedtest-cli
 sqlite3-doc
 sshfs
 sshpass
+swig  # scikit-hep/fastjet
 t1-cyrillic # Free Chancery font
 tcllib # globus
 tk-dev # python 3
