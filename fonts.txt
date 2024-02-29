@@ -1,0 +1,9 @@
+# To use:
+# mkdir -p ~/.local/share/fonts
+# cp fonts.txt ~/.local/share/fonts/
+# cd ~/.local/share/fonts/
+# for url in $(cat fonts.txt| cut -f1 -d "#" | sed '/^$/d'); do curl -sLO "${url}"; done
+# rm fonts.txt
+# fc-cache --force --verbose
+# rm -rf ~/.cache/matplotlib/*
+https://github.com/google/fonts/raw/main/ofl/felipa/Felipa-Regular.ttf
