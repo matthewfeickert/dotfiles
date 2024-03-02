@@ -1,0 +1,12 @@
+# pixi global install $(cat pixi-global-install.txt | cut -f1 -d "#" | sed '/^$/d')
+anaconda-client
+asciinema
+bat
+cookiecutter
+jupyter-repo2docker
+miller
+nbpreview
+pytube
+uproot-browser
+visidata
+xrootd

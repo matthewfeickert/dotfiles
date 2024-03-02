@@ -2,7 +2,6 @@
 # To use: apt install $(cat apt.txt | cut -f1 -d "#" | sed '/^$/d')
 arp-scan
 autoconf  # scikit-hep/fastjet
-bat # symlinked to batcat
 caffeine
 ccache # ROOT, SciPy
 cmake

@@ -114,5 +114,10 @@ if [ -d "${HOME}/.rbenv/bin" ]; then
     eval "$(rbenv init -)"
 fi
 
+# Add pixi to PATH
+if [ -d "${HOME}/.pixi/bin" ] ; then
+    export PATH="${HOME}/.pixi/bin:${PATH}"
+fi
+
 # Ensure LD_LIBRARY_PATH exists if application unsets it
 _PRESERVE_LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"; export _PRESERVE_LD_LIBRARY_PATH;
