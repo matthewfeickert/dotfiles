@@ -148,6 +148,11 @@ function bibtex-from-doi () {
     curl --location --header "Accept: application/x-bibtex" "https://doi.org/${doi}"
 }
 
+# Add pixi shell autocompletion
+if [ -d "${HOME}/.pixi/bin" ] ; then
+    eval "$(pixi completion --shell bash)"
+fi
+
 # If new information was addded to .profile in this session
 # defer to a tmp profile until the next session.
 if [ -f /tmp/.profile ]; then
