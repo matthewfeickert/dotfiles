@@ -19,7 +19,9 @@ if [ -f "${HOME}/.pythonrc.py" ]; then
 fi
 
 # Ensure that pip can't install outside a virtual environment
-export PIP_REQUIRE_VIRTUALENV=true
+if [ ! -f "${HOME}/.config/pip/pip.conf" ]; then
+    export PIP_REQUIRE_VIRTUALENV=true
+fi
 
 # Ensure local virtualenv setup
 if [ ! -f "${HOME}/opt/venv/bin/virtualenv" ]; then
