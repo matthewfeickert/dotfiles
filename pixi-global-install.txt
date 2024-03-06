@@ -7,6 +7,7 @@ jupyter-repo2docker
 miller
 nbpreview
 pytube
+rattler-build
 uproot-browser
 visidata
 xrootd
