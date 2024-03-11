@@ -2,6 +2,7 @@
 anaconda-client
 asciinema
 bat
+cmake
 cookiecutter
 jupyter-repo2docker
 miller
