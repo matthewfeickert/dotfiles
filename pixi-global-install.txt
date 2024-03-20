@@ -5,12 +5,14 @@ bat
 cmake
 cookiecutter
 grayskull
+hepconvert
 jupyter-repo2docker
 miller
 nbpreview
 pandoc
 pytube
 rattler-build
+ruff
 uproot-browser
 visidata
 xrootd
