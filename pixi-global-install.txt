@@ -4,6 +4,7 @@ asciinema
 bat
 cmake
 cookiecutter
+grayskull
 jupyter-repo2docker
 miller
 nbpreview
