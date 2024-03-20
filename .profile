@@ -119,5 +119,10 @@ if [ -d "${HOME}/.pixi/bin" ] ; then
     export PATH="${HOME}/.pixi/bin:${PATH}"
 fi
 
+# Add uv to PATH if it isn't already on PATH
+if [ -f "${HOME}/.cargo/env" ]; then
+    . "${HOME}/.cargo/env"
+fi
+
 # Ensure LD_LIBRARY_PATH exists if application unsets it
 _PRESERVE_LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"; export _PRESERVE_LD_LIBRARY_PATH;
