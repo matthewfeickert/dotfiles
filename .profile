@@ -119,7 +119,7 @@ if [ -d "${HOME}/.pixi/bin" ] ; then
     export PATH="${HOME}/.pixi/bin:${PATH}"
 fi
 
-# Add uv to PATH if it isn't already on PATH
+# Add cargo binaries to PATH if it isn't already on PATH
 if [ -f "${HOME}/.cargo/env" ]; then
     . "${HOME}/.cargo/env"
 fi
