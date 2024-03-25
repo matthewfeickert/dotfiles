@@ -14,5 +14,6 @@ pytube
 rattler-build
 ruff
 uproot-browser
+uv
 visidata
 xrootd
