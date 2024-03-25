@@ -102,7 +102,6 @@ r-base
 readline-doc
 ripgrep
 screenfetch
-shellcheck
 speedtest-cli
 sqlite3-doc
 sshfs

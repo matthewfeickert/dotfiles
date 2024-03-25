@@ -13,6 +13,7 @@ pandoc
 pytube
 rattler-build
 ruff
+shellcheck
 uproot-browser
 uv
 visidata
