@@ -6,6 +6,7 @@ cmake
 cookiecutter
 grayskull
 hepconvert
+hyperfine
 jupyter-repo2docker
 miller
 nbpreview
