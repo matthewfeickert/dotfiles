@@ -1,5 +1,6 @@
 # Packages for Ubuntu 22.04
 # To use: apt install $(cat apt.txt | cut -f1 -d "#" | sed '/^$/d')
+apt-transport-https  # Google Cloud CLI
 arp-scan
 autoconf  # scikit-hep/fastjet
 caffeine
@@ -31,6 +32,7 @@ glmark2
 gnome-software-plugin-flatpak
 gnome-tweaks # remap CapsLock to Ctrl
 gnuplot
+google-cloud-cli
 hdf5-tools
 htop
 imagemagick
