@@ -12,6 +12,7 @@ miller
 nbpreview
 pandoc
 pipx
+pre-commit
 pytube
 rattler-build
 ruff
