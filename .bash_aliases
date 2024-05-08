@@ -16,6 +16,8 @@ alias HUD=htop
 alias cleanContainers='docker container prune'
 alias cleanImages='docker image prune'
 
+alias icanhazip='curl icanhazip.com'
+
 # cluster logins
 # use ~/.ssh/config for details
 alias lxplus='ssh LXPLUS'
