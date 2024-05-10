@@ -11,6 +11,8 @@
 	incoming = "!f() { git fetch && git log ..origin/$(git rev-parse --abbrev-ref HEAD); }; f"
 	outgoing = "!f() { git fetch && git log origin/$(git rev-parse --abbrev-ref HEAD)..; }; f"
 	last-files = "!f() { git show --name-only $(git rev-parse HEAD); }; f"
+	# git sync origin upstream main
+	sync = "!f() { git fetch --all --prune && git switch \"$3\" && git pull \"$2\" \"$3\" && git push \"$1\" \"$3\" && git switch -; }; f"
 [commit]
 	gpgsign = true
 [diff "jupyternotebook"]
