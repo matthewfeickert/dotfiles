@@ -42,3 +42,5 @@
 	manyFiles = true
 [pager]
 	diff = false
+[grep]
+	lineNumber = true
