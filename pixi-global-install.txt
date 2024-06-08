@@ -4,6 +4,7 @@ asciinema
 bat
 cmake
 cookiecutter
+git
 grayskull
 hepconvert
 hyperfine
