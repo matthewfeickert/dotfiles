@@ -11,6 +11,7 @@ hyperfine
 jupyter-repo2docker
 miller
 nbpreview
+ninja
 pandoc
 pipx
 pre-commit
