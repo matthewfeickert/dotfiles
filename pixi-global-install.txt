@@ -13,6 +13,7 @@ jupyter-repo2docker
 miller
 nbpreview
 ninja
+nvtop
 pandoc
 pipx
 pre-commit

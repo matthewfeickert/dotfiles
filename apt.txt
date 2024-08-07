@@ -86,7 +86,6 @@ ncurses-doc
 nmap
 # nvidia-container-runtime # https://nvidia.github.io/nvidia-container-runtime/
 nvidia-cuda-toolkit
-nvtop
 openssh-server
 pandoc
 pdfsam
