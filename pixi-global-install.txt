@@ -10,6 +10,7 @@ grayskull
 hepconvert
 hyperfine
 jupyter-repo2docker
+lhapdf
 miller
 nbpreview
 ninja
