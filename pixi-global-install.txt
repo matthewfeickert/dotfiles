@@ -5,6 +5,7 @@ bat
 cmake
 cookiecutter
 crane
+curl
 git
 grayskull
 hepconvert
