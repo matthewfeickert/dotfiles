@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 brew "boost"
+brew "coreutils"
 brew "htop"
 brew "libomp"
 brew "make"
