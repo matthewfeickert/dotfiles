@@ -44,6 +44,7 @@ libblas-dev
 libboost-dev  # scikit-hep/fastjet
 libcanberra-gtk-module # ROOT
 libcfitsio-dev # ROOT
+libcgal-dev  # scikit-hep/fastjet
 libffi-dev # python 3
 libfftw3-dev # ROOT
 libfreeimage3 # cuDNN
