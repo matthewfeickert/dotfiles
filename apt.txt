@@ -34,7 +34,6 @@ gnome-tweaks # remap CapsLock to Ctrl
 gnuplot
 google-cloud-cli
 hdf5-tools
-htop
 imagemagick
 jq
 krb5-user # ROOT
