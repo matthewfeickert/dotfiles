@@ -103,11 +103,6 @@ if [ -d "${HOME}/.cargo/bin" ]; then
     PATH="${HOME}/.cargo/bin${PATH:+:${PATH}}"; export PATH;
 fi
 
-# Add Julia
-if [ -d "${HOME}/bin/julia/julia-1.5.3/bin/" ]; then
-    PATH="${HOME}/bin/julia/julia-1.5.3/bin${PATH:+:${PATH}}"; export PATH;
-fi
-
 # Add rbenv
 if [ -d "${HOME}/.rbenv/bin" ]; then
     PATH="${HOME}/.rbenv/bin${PATH:+:${PATH}}"; export PATH;

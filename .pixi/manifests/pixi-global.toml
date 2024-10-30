@@ -1,0 +1,206 @@
+version = 1
+
+[envs.hepconvert]
+channels = ["conda-forge"]
+dependencies = { hepconvert = "*" }
+exposed = { hepconvert = "hepconvert" }
+
+[envs.git]
+channels = ["conda-forge"]
+dependencies = { git = "*" }
+exposed = { git-receive-pack = "git-receive-pack", git = "git", git-shell = "git-shell", scalar = "scalar", gitk = "gitk", git-cvsserver = "git-cvsserver", git-upload-archive = "git-upload-archive", git-upload-pack = "git-upload-pack" }
+
+[envs.anaconda-client]
+channels = ["conda-forge"]
+dependencies = { anaconda-client = "*" }
+exposed = { anaconda = "anaconda", binstar = "binstar", conda-server = "conda-server" }
+
+[envs.pytube]
+channels = ["conda-forge"]
+dependencies = { pytube = "*" }
+exposed = { pytube = "pytube" }
+
+[envs.lhapdf]
+channels = ["conda-forge"]
+dependencies = { lhapdf = "*" }
+exposed = { lhapdf = "lhapdf", lhapdf-config = "lhapdf-config" }
+
+[envs.xrootd]
+channels = ["conda-forge"]
+dependencies = { xrootd = "*" }
+exposed = { xrdpinls = "xrdpinls", xrdfs = "xrdfs", xrdcks = "xrdcks", wait41 = "wait41", xrootd-config = "xrootd-config", xrdcrc32c = "xrdcrc32c", mpxstats = "mpxstats", xrootd = "xrootd", xrdadler32 = "xrdadler32", frm_admin = "frm_admin", xrdmapc = "xrdmapc", cmsd = "cmsd", xrdsssadmin = "xrdsssadmin", frm_xfrd = "frm_xfrd", xrdpwdadmin = "xrdpwdadmin", xrdgsitest = "xrdgsitest", frm_xfragent = "frm_xfragent", frm_purged = "frm_purged", cconfig = "cconfig", xrdreplay = "xrdreplay", xrdgsiproxy = "xrdgsiproxy", xrdcp = "xrdcp", xrdpfc_print = "xrdpfc_print", xrdcopy = "xrdcopy", xrdacctest = "xrdacctest" }
+
+[envs.jupyterlab]
+channels = ["conda-forge"]
+dependencies = { jupyterlab = "*" }
+exposed = { jupyter-labhub = "jupyter-labhub", jupyter-lab = "jupyter-lab", jlpm = "jlpm", jupyter-labextension = "jupyter-labextension" }
+
+[envs.cmake]
+channels = ["conda-forge"]
+dependencies = { cmake = "*" }
+exposed = { cmake = "cmake", ccmake = "ccmake", cpack = "cpack", ctest = "ctest" }
+
+[envs.visidata]
+channels = ["conda-forge"]
+dependencies = { visidata = "*" }
+exposed = { visidata = "visidata", vd = "vd" }
+
+[envs.starship]
+channels = ["conda-forge"]
+dependencies = { starship = "*" }
+exposed = { starship = "starship" }
+
+[envs.nox]
+channels = ["conda-forge"]
+dependencies = { nox = "*" }
+exposed = { tox-to-nox = "tox-to-nox", nox = "nox" }
+
+[envs.crane]
+channels = ["conda-forge"]
+dependencies = { crane = "*" }
+exposed = { crane = "crane" }
+
+[envs.ruff]
+channels = ["conda-forge"]
+dependencies = { ruff = "*" }
+exposed = { ruff = "ruff" }
+
+[envs.isort]
+channels = ["conda-forge"]
+dependencies = { isort = "*" }
+exposed = { isort-identify-imports = "isort-identify-imports", isort = "isort" }
+
+[envs.grayskull]
+channels = ["conda-forge"]
+dependencies = { grayskull = "*" }
+exposed = { conda-grayskull = "conda-grayskull", greyskull = "greyskull", grayskull = "grayskull", conda-greyskull = "conda-greyskull" }
+
+[envs.pre-commit]
+channels = ["conda-forge"]
+dependencies = { pre-commit = "*" }
+exposed = { pre-commit = "pre-commit" }
+
+[envs.shellcheck]
+channels = ["conda-forge"]
+dependencies = { shellcheck = "*" }
+exposed = { shellcheck = "shellcheck" }
+
+[envs.miller]
+channels = ["conda-forge"]
+dependencies = { miller = "*" }
+exposed = { mlr = "mlr" }
+
+[envs.jupyter-repo2docker]
+channels = ["conda-forge"]
+dependencies = { jupyter-repo2docker = "*" }
+exposed = { jupyter-repo2docker = "jupyter-repo2docker", repo2docker = "repo2docker" }
+
+[envs.ninja]
+channels = ["conda-forge"]
+dependencies = { ninja = "*" }
+exposed = { ninja = "ninja" }
+
+[envs.nbpreview]
+channels = ["conda-forge"]
+dependencies = { nbpreview = "*" }
+exposed = { nbpreview = "nbpreview", nbp = "nbp" }
+
+[envs.uproot-browser]
+channels = ["conda-forge"]
+dependencies = { uproot-browser = "*" }
+exposed = { uproot-browser = "uproot-browser" }
+
+[envs.htop]
+channels = ["conda-forge"]
+dependencies = { htop = "*" }
+exposed = { htop = "htop" }
+
+[envs.cookiecutter]
+channels = ["conda-forge"]
+dependencies = { cookiecutter = "*" }
+exposed = { cookiecutter = "cookiecutter" }
+
+[envs.bat]
+channels = ["conda-forge"]
+dependencies = { bat = "*" }
+exposed = { bat = "bat" }
+
+[envs.hyperfine]
+channels = ["conda-forge"]
+dependencies = { hyperfine = "*" }
+exposed = { hyperfine = "hyperfine" }
+
+[envs.curl]
+channels = ["conda-forge"]
+dependencies = { curl = "*" }
+exposed = { curl = "curl" }
+
+[envs.nvtop]
+channels = ["conda-forge"]
+dependencies = { nvtop = "*" }
+exposed = { nvtop = "nvtop" }
+
+[envs.swig]
+channels = ["conda-forge"]
+dependencies = { swig = "*" }
+exposed = { ccache-swig = "ccache-swig", "swig4.0" = "swig4.0", swig = "swig" }
+
+[envs.llm]
+channels = ["conda-forge"]
+dependencies = { llm = "*" }
+exposed = { llm = "llm" }
+
+[envs.uv]
+channels = ["conda-forge"]
+dependencies = { uv = "*" }
+exposed = { uvx = "uvx", uv = "uv" }
+
+[envs.hatch]
+channels = ["conda-forge"]
+dependencies = { hatch = "*" }
+exposed = { hatch = "hatch" }
+
+[envs.pandoc]
+channels = ["conda-forge"]
+dependencies = { pandoc = "*" }
+exposed = { pandoc = "pandoc", pandoc-server = "pandoc-server", pandoc-lua = "pandoc-lua" }
+
+[envs.rattler-build]
+channels = ["conda-forge"]
+dependencies = { rattler-build = "*" }
+exposed = { rattler-build = "rattler-build" }
+
+[envs.asciinema]
+channels = ["conda-forge"]
+dependencies = { asciinema = "*" }
+exposed = { asciinema = "asciinema" }
+
+[envs.codespell]
+channels = ["conda-forge"]
+dependencies = { codespell = "*" }
+exposed = { codespell = "codespell" }
+
+[envs.ripgrep]
+channels = ["conda-forge"]
+dependencies = { ripgrep = "*" }
+exposed = { rg = "rg" }
+
+[envs.pipx]
+channels = ["conda-forge"]
+dependencies = { pipx = "*" }
+exposed = { pipx = "pipx" }
+
+[envs.root]
+channels = ["conda-forge"]
+dependencies = { root = "*" }
+exposed = { root = "root" }
+
+[envs.openssl]
+channels = ["conda-forge"]
+dependencies = { openssl = "*" }
+exposed = { c_rehash = "c_rehash", openssl = "openssl" }
+
+[envs.juliaup]
+channels = ["conda-forge"]
+dependencies = { juliaup = "*" }
+exposed = { julia = "julia", juliaup = "juliaup" }
