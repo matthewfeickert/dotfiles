@@ -204,3 +204,8 @@ exposed = { c_rehash = "c_rehash", openssl = "openssl" }
 channels = ["conda-forge"]
 dependencies = { juliaup = "*" }
 exposed = { julia = "julia", juliaup = "juliaup" }
+
+[envs.r]
+channels = ["conda-forge"]
+dependencies = { r = "*" }
+exposed = { r = "r", R = "r" }

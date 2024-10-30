@@ -99,7 +99,6 @@ python3-tk
 python3-tzlocal
 python3-venv
 qtbase5-dev-tools # ROOT
-r-base
 readline-doc
 ripgrep
 screenfetch
