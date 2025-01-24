@@ -47,3 +47,91 @@ function setupENV {
         source "${HOME}/.venvs/base/bin/activate"
     fi
 }
+
+# Utility function for setting up ATLAS Athena dev environment
+function setup-athena-dev-environment () {
+    # Example:
+    # setup-athena-dev-environment --org atlas-asg --repository columnar-athena --branch columnar --fetch-depth 50 --directory debug-columnar-athena
+
+    local ORG="atlas"
+    local REPOSITORY="athena"
+    local BRANCH="main"
+    local FETCH_DEPTH=50
+    local DIRECTORY="${REPOSITORY}"
+
+    # Parse command-line arguments
+    while [[ "$#" -gt 0 ]]; do
+        case "$1" in
+            --org|-o)
+                ORG="$2"
+                shift 2
+                ;;
+            --repository|-r)
+                REPOSITORY="$2"
+                DIRECTORY="${REPOSITORY}"
+                shift 2
+                ;;
+            --branch|-b)
+                BRANCH="$2"
+                shift 2
+                ;;
+            --fetch-depth|-f)
+                FETCH_DEPTH="$2"
+                shift 2
+                ;;
+            --directory|-d)
+                DIRECTORY="$2"
+                shift 2
+                ;;
+            --help|-h)
+                echo "Usage: setup-athena-dev-environment [OPTIONS]"
+                echo ""
+                echo "Options:"
+                echo "  --org, -o           Set the CERN GitLab org name (default: atlas)"
+                echo "  --repository, -r    Set the repository name (default: athena)"
+                echo "  --branch, -b        Set the branch name (default: main)"
+                echo "  --fetch-depth, -f   Set the fetch depth (default: 50)"
+                echo "  --directory, -d     Set the cloned repository directory name (default: athena)"
+                echo "  --help, -h          Show this help message and exit"
+                return 0
+                ;;
+            *)
+                echo "Unknown option: $1"
+                return 1
+                ;;
+        esac
+    done
+
+    # Ensure DIRECTORY is set before cleanup
+    if [[ -z "${DIRECTORY}" ]]; then
+        echo "Error: Repository name is not set."
+        return 1
+    fi
+
+    if [ -d "${DIRECTORY}" ]; then
+        echo -e "\n# rm -rf ${DIRECTORY}"
+        rm -rf ${DIRECTORY}
+    fi
+
+    if [[ "${REPOSITORY}" != "${DIRECTORY}" ]]; then
+        echo -e "\n# git clone --no-checkout --depth ${FETCH_DEPTH} --branch ${BRANCH} ssh://git@gitlab.cern.ch:7999/${ORG}/${REPOSITORY}.git ${DIRECTORY}"
+    else
+        echo -e "\n# git clone --no-checkout --depth ${FETCH_DEPTH} --branch ${BRANCH} ssh://git@gitlab.cern.ch:7999/${ORG}/${REPOSITORY}.git"
+    fi
+    git clone --no-checkout --depth "${FETCH_DEPTH}" --branch ${BRANCH} ssh://git@gitlab.cern.ch:7999/${ORG}/${REPOSITORY}.git "${DIRECTORY}"
+
+    echo -e "\n# cd ${DIRECTORY}/"
+    cd "${DIRECTORY}"
+
+    echo -e "\n# git sparse-checkout init --cone"
+    git sparse-checkout init --cone
+
+    echo -e "\n# git sparse-checkout set PhysicsAnalysis Projects Reconstruction"
+    git sparse-checkout set PhysicsAnalysis Projects Reconstruction
+
+    echo -e "\n# git switch ${BRANCH}"
+    git switch ${BRANCH}
+
+    echo -e "\n# cd -"
+    cd -
+}
