@@ -151,6 +151,17 @@ function bibtex-from-doi () {
     curl --location --header "Accept: application/x-bibtex" "https://doi.org/${doi}"
 }
 
+# Utility function for https://github.com/conda-forge/staged-recipes
+function build-staged-recipe () {
+    # Example:
+    # build-staged-recipe 12
+    local CPU_COUNT
+    CPU_COUNT="${1:-10}"
+    echo "# docker system prune -f && pixi run lint && CPU_COUNT="${CPU_COUNT}" pixi run build-linux linux64"
+    docker system prune -f
+    pixi run lint && CPU_COUNT="${CPU_COUNT}" pixi run build-linux linux64
+}
+
 # Add pixi shell autocompletion
 if [ -d "${HOME}/.pixi/bin" ] ; then
     eval "$(pixi completion --shell bash)"
