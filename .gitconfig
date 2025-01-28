@@ -45,3 +45,5 @@
 	diff = false
 [grep]
 	lineNumber = true
+[checkout]
+	workers = 0
