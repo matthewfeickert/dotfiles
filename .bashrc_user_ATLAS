@@ -16,6 +16,11 @@ if [ -z "${EDITOR}" ]; then
     export EDITOR="$(command -v vim)"
 fi
 
+# Enable Git bash completions
+if [ -f /usr/share/bash-completion/completions/git ]; then
+    . /usr/share/bash-completion/completions/git
+fi
+
 # Ensure local virtualenv setup
 if [ ! -f "${HOME}/opt/venv/bin/virtualenv" ]; then
     curl -sL --location --output /tmp/virtualenv.pyz https://bootstrap.pypa.io/virtualenv.pyz
