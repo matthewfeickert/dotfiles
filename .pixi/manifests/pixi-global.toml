@@ -30,11 +30,6 @@ channels = ["conda-forge"]
 dependencies = { xrootd = "*" }
 exposed = { xrdpinls = "xrdpinls", xrdfs = "xrdfs", xrdcks = "xrdcks", wait41 = "wait41", xrootd-config = "xrootd-config", xrdcrc32c = "xrdcrc32c", mpxstats = "mpxstats", xrootd = "xrootd", xrdadler32 = "xrdadler32", frm_admin = "frm_admin", xrdmapc = "xrdmapc", cmsd = "cmsd", xrdsssadmin = "xrdsssadmin", frm_xfrd = "frm_xfrd", xrdpwdadmin = "xrdpwdadmin", xrdgsitest = "xrdgsitest", frm_xfragent = "frm_xfragent", frm_purged = "frm_purged", cconfig = "cconfig", xrdreplay = "xrdreplay", xrdgsiproxy = "xrdgsiproxy", xrdcp = "xrdcp", xrdpfc_print = "xrdpfc_print", xrdcopy = "xrdcopy", xrdacctest = "xrdacctest" }
 
-[envs.jupyterlab]
-channels = ["conda-forge"]
-dependencies = { jupyterlab = "*" }
-exposed = { jupyter-labhub = "jupyter-labhub", jupyter-lab = "jupyter-lab", jlpm = "jlpm", jupyter-labextension = "jupyter-labextension" }
-
 [envs.cmake]
 channels = ["conda-forge"]
 dependencies = { cmake = "*" }
@@ -43,7 +38,7 @@ exposed = { cmake = "cmake", ccmake = "ccmake", cpack = "cpack", ctest = "ctest"
 [envs.visidata]
 channels = ["conda-forge"]
 dependencies = { visidata = "*" }
-exposed = { visidata = "visidata", vd = "vd" }
+exposed = { visidata = "visidata", vd = "vd", "vd2to3.vdx" = "vd2to3.vdx" }
 
 [envs.starship]
 channels = ["conda-forge"]
@@ -208,4 +203,59 @@ exposed = { julia = "julia", juliaup = "juliaup" }
 [envs.r]
 channels = ["conda-forge"]
 dependencies = { r = "*" }
-exposed = { r = "r", R = "r" }
+exposed = {}
+
+[envs.cffconvert]
+channels = ["conda-forge"]
+dependencies = { cffconvert = "*" }
+exposed = { cffconvert = "cffconvert" }
+
+[envs.croc]
+channels = ["conda-forge"]
+dependencies = { croc = "*" }
+exposed = { croc = "croc" }
+
+[envs.scikit-hep-testdata]
+channels = ["conda-forge"]
+dependencies = { scikit-hep-testdata = "*" }
+exposed = { scikit-hep-testdata = "scikit-hep-testdata", skhep-testdata = "skhep-testdata" }
+
+[envs.diskonaut]
+channels = ["conda-forge"]
+dependencies = { diskonaut = "*" }
+exposed = { diskonaut = "diskonaut" }
+
+[envs.dive]
+channels = ["conda-forge"]
+dependencies = { dive = "*" }
+exposed = { dive = "dive" }
+
+[envs.pixi-pack]
+channels = ["conda-forge"]
+dependencies = { pixi-pack = "*" }
+exposed = { pixi-pack = "pixi-pack" }
+
+[envs.conda]
+channels = ["conda-forge"]
+dependencies = { conda = "*" }
+exposed = { activate = "activate", conda = "conda", conda-env = "conda-env", deactivate = "deactivate" }
+
+[envs.conda-smithy]
+channels = ["conda-forge"]
+dependencies = { conda-smithy = "*" }
+exposed = { feedstocks = "feedstocks", conda-smithy = "conda-smithy" }
+
+[envs.imagemagick]
+channels = ["conda-forge"]
+dependencies = { imagemagick = "*" }
+exposed = { "Magick++-config" = "Magick++-config", MagickCore-config = "MagickCore-config", MagickWand-config = "MagickWand-config", animate = "animate", compare = "compare", composite = "composite", conjure = "conjure", convert = "convert", display = "display", identify = "identify", import = "import", magick = "magick", magick-script = "magick-script", mogrify = "mogrify", montage = "montage", stream = "stream" }
+
+[envs.conda-recipe-manager]
+channels = ["conda-forge"]
+dependencies = { conda-recipe-manager = "*" }
+exposed = { conda-recipe-manager = "conda-recipe-manager", crm = "crm" }
+
+[envs.data-science]
+channels = ["conda-forge"]
+dependencies = { jupyterlab = "*", scipy = "*", pandas = "*", matplotlib = "*", scikit-learn = "*", notebook = "*", jax = "*", pytorch = "*" , uproot = "*" , hist = "*", mplhep = "*" }
+exposed = { jupyter = "jupyter", jupyter-lab = "jupyter-lab" , ipython = "ipython" }
