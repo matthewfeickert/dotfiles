@@ -8,17 +8,6 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-# Add pyenv (needed before .bashrc)
-if [ -d "${HOME}/.pyenv/bin" ]; then
-    export PYENV_ROOT="${HOME}/.pyenv"
-    export PATH="${PYENV_ROOT}/bin:${PATH}"
-
-    # Place pyenv shims on path
-    if [[ ":${PATH}:" != *":$(pyenv root)/shims:"* ]]; then
-        eval "$(pyenv init --path)"
-    fi
-fi
-
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -38,14 +27,6 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # User added
-
-# Add pyenv-virtualenv
-if [ -d "${HOME}/.pyenv/plugins/pyenv-virtualenv" ]; then
-    # Place pyenv-virtualenv shims on path
-    if [[ ":${PATH}:" != *":$(pyenv root)/plugins/pyenv-virtualenv/shims:"* ]]; then
-        eval "$(pyenv virtualenv-init -)"
-    fi
-fi
 
 # Add TeX Live to PATH
 # For tlmgr support if `tlmgr init-usertree` isn't enough run:

@@ -21,15 +21,24 @@ if [ -f /usr/share/bash-completion/completions/git ]; then
     . /usr/share/bash-completion/completions/git
 fi
 
-# Ensure local virtualenv setup
-if [ ! -f "${HOME}/opt/venv/bin/virtualenv" ]; then
-    curl -sL --location --output /tmp/virtualenv.pyz https://bootstrap.pypa.io/virtualenv.pyz
-    python3 /tmp/virtualenv.pyz ~/opt/venv
-    # python /tmp/virtualenv.pyz ~/opt/venv
-    ~/opt/venv/bin/pip install --upgrade pip
-    ~/opt/venv/bin/pip install virtualenv
-    mkdir -p ~/bin  # Ensure exists if new machine
-    ln -s ~/opt/venv/bin/virtualenv ~/bin/virtualenv
+# Ensure that uv is installed
+if ! command -v uv >/dev/null 2>&1; then
+    echo "# Installing uv..."
+    # Check if pixi exists
+    if command -v pixi >/dev/null 2>&1; then
+      # Use pixi global
+      echo "# Installing with pixi global..."
+      pixi global install uv
+    else
+      # Install from https://astral.sh/
+      echo "# Installing from https://astral.sh/..."
+      curl -LsSf https://astral.sh/uv/install.sh | sh
+    fi
+
+    # Ensure ~/.local/bin is on the PATH for uv
+    if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+        export PATH="${HOME}/.local/bin:${PATH}"
+    fi
 fi
 
 # Use a function over sourcing on load to reduce login time

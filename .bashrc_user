@@ -23,51 +23,32 @@ if [ ! -f "${HOME}/.config/pip/pip.conf" ]; then
     export PIP_REQUIRE_VIRTUALENV=true
 fi
 
-# Ensure local virtualenv setup
-if [ ! -f "${HOME}/opt/venv/bin/virtualenv" ]; then
-    curl -sL --location --output /tmp/virtualenv.pyz https://bootstrap.pypa.io/virtualenv.pyz
-    python3 /tmp/virtualenv.pyz ~/opt/venv
-    ~/opt/venv/bin/pip install --upgrade pip
-    ~/opt/venv/bin/pip install virtualenv
-    mkdir -p ~/bin  # Ensure exists if new machine
-    ln -s ~/opt/venv/bin/virtualenv ~/bin/virtualenv
+# Ensure that uv is installed
+if ! command -v uv >/dev/null 2>&1; then
+    echo "# Installing uv..."
+    # Check if pixi exists
+    if command -v pixi >/dev/null 2>&1; then
+      # Use pixi global
+      echo "# Installing with pixi global..."
+      pixi global install uv
+    else
+      # Install from https://astral.sh/
+      echo "# Installing from https://astral.sh/..."
+      curl -LsSf https://astral.sh/uv/install.sh | sh
+    fi
+
+    # Ensure ~/.local/bin is on the PATH for uv
+    if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+        export PATH="${HOME}/.local/bin:${PATH}"
+    fi
 fi
 
-# Add pyenv
-if [ -d "${HOME}/.pyenv/bin" ]; then
-    eval "$(pyenv init -)"
-
-    # Place pyenv shims on path
-    if [[ ":${PATH}:" != *":$(pyenv root)/shims:"* ]]; then
-        eval "$(pyenv init --path)"
-    fi
-    if [ -d "${HOME}/.pyenv/plugins/pyenv-virtualenv" ]; then
-        # Place pyenv-virtualenv shims on path
-        if [[ ":${PATH}:" != *":$(pyenv root)/plugins/pyenv-virtualenv/shims:"* ]]; then
-            eval "$(pyenv virtualenv-init -)"
-        fi
-    fi
-
-    # Allow for prompt updating on venv switch
-    # c.f. https://github.com/pyenv/pyenv-virtualenv/issues/135#issuecomment-717554081
-    export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-    export BASE_PROMPT=$PS1
-    function updatePrompt {
-        if [[ "$(pyenv version-name)" != "system" ]]; then
-            PYENV_VER=$(pyenv version-name)               # capture version name in variable
-            export PS1="(${PYENV_VER%%:*}) "$BASE_PROMPT  # grab text prior to first ':' character
-        else
-            export PS1=$BASE_PROMPT
-        fi
-    }
-    export PROMPT_COMMAND='updatePrompt'
-
-    # default venv
-    if [ -d "${HOME}/.pyenv/versions/base" ]; then
-        pyenv activate base
-    fi
-
-    alias deactivate='pyenv deactivate'
+# Activate base environment if it exists and create it if not
+if [ -d "${HOME}/.local/venvs/base" ]; then
+    . "${HOME}/.local/venvs/base/bin/activate"
+else
+    echo "# Creating base virtual environment for system..."
+    uv venv --python 3.13 "${HOME}/.local/venvs/base"
 fi
 
 # Enable tab completion of Python virtual environments
