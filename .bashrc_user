@@ -45,7 +45,8 @@ fi
 
 # Activate base environment if it exists and create it if not
 if [ -d "${HOME}/.local/venvs/base" ]; then
-    . "${HOME}/.local/venvs/base/bin/activate"
+    # Activate the environment but don't update the prompt
+    VIRTUAL_ENV_DISABLE_PROMPT=1 . "${HOME}/.local/venvs/base/bin/activate"
 else
     echo "# Creating base virtual environment for system..."
     uv venv --python 3.13 "${HOME}/.local/venvs/base"

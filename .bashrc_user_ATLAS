@@ -58,7 +58,8 @@ function setupENV {
 
     # default venv from `virtualenv "${HOME}/.venvs/base"`
     if [ -d "${HOME}/.venvs/base" ]; then
-        source "${HOME}/.venvs/base/bin/activate"
+        # Activate the environment but don't update the prompt
+        VIRTUAL_ENV_DISABLE_PROMPT=1 . "${HOME}/.venvs/base/bin/activate"
     fi
 }
 
