@@ -150,3 +150,14 @@ function setup-athena-dev-environment () {
     echo -e "\n# cd -"
     cd -
 }
+
+# Add pixi shell autocompletion
+if [ -d "${HOME}/.pixi/bin" ] ; then
+    eval "$(pixi completion --shell bash)"
+fi
+
+# Add uv shell autocompletion
+# This should always be true given the top of the file
+if command -v uv >/dev/null 2>&1; then
+    eval "$(uv generate-shell-completion bash)"
+fi
