@@ -155,6 +155,7 @@ function setup-athena-dev-environment () {
     local BRANCH="main"
     local FETCH_DEPTH=50
     local DIRECTORY="${REPOSITORY}"
+    local ORIGIN="origin"
 
     # Parse command-line arguments
     while [[ "$#" -gt 0 ]]; do
@@ -180,8 +181,14 @@ function setup-athena-dev-environment () {
                 DIRECTORY="$2"
                 shift 2
                 ;;
+            --origin)
+                ORIGIN="$2"
+                shift 2
+                ;;
             --help|-h)
                 echo "Usage: setup-athena-dev-environment [OPTIONS]"
+                echo -e "\nExample:"
+                echo "setup-athena-dev-environment --org atlas-asg --repository columnar-athena --branch columnar --fetch-depth 50 --directory debug-columnar-athena"
                 echo ""
                 echo "Options:"
                 echo "  --org, -o           Set the CERN GitLab org name (default: atlas)"
@@ -189,6 +196,7 @@ function setup-athena-dev-environment () {
                 echo "  --branch, -b        Set the branch name (default: main)"
                 echo "  --fetch-depth, -f   Set the fetch depth (default: 50)"
                 echo "  --directory, -d     Set the cloned repository directory name (default: athena)"
+                echo "  --origin            Set the remote name (default: origin)"
                 echo "  --help, -h          Show this help message and exit"
                 return 0
                 ;;
@@ -211,11 +219,11 @@ function setup-athena-dev-environment () {
     fi
 
     if [[ "${REPOSITORY}" != "${DIRECTORY}" ]]; then
-        echo -e "\n# git clone --no-checkout --depth ${FETCH_DEPTH} --branch ${BRANCH} ssh://git@gitlab.cern.ch:7999/${ORG}/${REPOSITORY}.git ${DIRECTORY}"
+        echo -e "\n# git clone --no-checkout --origin ${ORIGIN} --depth ${FETCH_DEPTH} --branch ${BRANCH} ssh://git@gitlab.cern.ch:7999/${ORG}/${REPOSITORY}.git ${DIRECTORY}"
     else
-        echo -e "\n# git clone --no-checkout --depth ${FETCH_DEPTH} --branch ${BRANCH} ssh://git@gitlab.cern.ch:7999/${ORG}/${REPOSITORY}.git"
+        echo -e "\n# git clone --no-checkout --origin ${ORIGIN} --depth ${FETCH_DEPTH} --branch ${BRANCH} ssh://git@gitlab.cern.ch:7999/${ORG}/${REPOSITORY}.git"
     fi
-    git clone --no-checkout --depth "${FETCH_DEPTH}" --branch ${BRANCH} ssh://git@gitlab.cern.ch:7999/${ORG}/${REPOSITORY}.git "${DIRECTORY}"
+    git clone --no-checkout --origin "${ORIGIN}" --depth "${FETCH_DEPTH}" --branch ${BRANCH} ssh://git@gitlab.cern.ch:7999/${ORG}/${REPOSITORY}.git "${DIRECTORY}"
 
     echo -e "\n# cd ${DIRECTORY}/"
     cd "${DIRECTORY}"
