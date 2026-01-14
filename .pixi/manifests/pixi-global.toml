@@ -55,10 +55,20 @@ channels = ["conda-forge"]
 dependencies = { crane = "*" }
 exposed = { crane = "crane" }
 
+[envs.uv]
+channels = ["conda-forge"]
+dependencies = { uv = "*", python = "*" }
+exposed = { uvx = "uvx", uv = "uv" }
+
 [envs.ruff]
 channels = ["conda-forge"]
 dependencies = { ruff = "*" }
 exposed = { ruff = "ruff" }
+
+[envs.ty]
+channels = ["conda-forge"]
+dependencies = { ty = "*" }
+exposed = { ty = "ty" }
 
 [envs.isort]
 channels = ["conda-forge"]
@@ -145,11 +155,6 @@ channels = ["conda-forge"]
 dependencies = { llm = "*" }
 exposed = { llm = "llm" }
 
-[envs.uv]
-channels = ["conda-forge"]
-dependencies = { uv = "*" }
-exposed = { uvx = "uvx", uv = "uv" }
-
 [envs.hatch]
 channels = ["conda-forge"]
 dependencies = { hatch = "*" }
@@ -185,11 +190,6 @@ channels = ["conda-forge"]
 dependencies = { pipx = "*" }
 exposed = { pipx = "pipx" }
 
-[envs.root]
-channels = ["conda-forge"]
-dependencies = { root = "*" }
-exposed = { root = "root" }
-
 [envs.openssl]
 channels = ["conda-forge"]
 dependencies = { openssl = "*" }
@@ -202,8 +202,8 @@ exposed = { julia = "julia", juliaup = "juliaup" }
 
 [envs.r]
 channels = ["conda-forge"]
-dependencies = { r = "*" }
-exposed = {}
+dependencies = { r = "*", r-dplyr = "*" }
+exposed = { R = "R" }
 
 [envs.cffconvert]
 channels = ["conda-forge"]
@@ -235,15 +235,61 @@ channels = ["conda-forge"]
 dependencies = { pixi-pack = "*" }
 exposed = { pixi-pack = "pixi-pack" }
 
+[envs.pixi-unpack]
+channels = ["conda-forge"]
+dependencies = { pixi-unpack = "*" }
+exposed = { pixi-unpack = "pixi-unpack" }
+
 [envs.conda]
 channels = ["conda-forge"]
 dependencies = { conda = "*" }
 exposed = { activate = "activate", conda = "conda", conda-env = "conda-env", deactivate = "deactivate" }
 
+[envs.mamba]
+channels = ["conda-forge"]
+dependencies = { mamba = "*" }
+exposed = { mamba = "mamba" }
+
 [envs.conda-smithy]
 channels = ["conda-forge"]
 dependencies = { conda-smithy = "*" }
 exposed = { feedstocks = "feedstocks", conda-smithy = "conda-smithy" }
+
+# https://github.com/conda-forge/jaxlib-feedstock/issues/273#issuecomment-2219766828
+[envs.data-science]
+channels = ["conda-forge"]
+dependencies = { jupyterlab = "*", scipy = "*", pandas = "*", matplotlib = "*", scikit-learn = "*", notebook = "*", jax = "*", jaxlib = { version = "*", build = "cuda*" }, pytorch-gpu = "*" , uproot = "*" , hist = "*", mplhep = "*" , h5py = "*" , pymc = "*", sbi = "*" , numpyro = "*" , gpjax = "*", polars="*", ibis-polars="*", ibis-ml="*"}
+exposed = { jupyter = "jupyter", jupyter-lab = "jupyter-lab" , ipython = "ipython" }
+
+[envs.watchgha]
+channels = ["conda-forge"]
+dependencies = { watchgha = "*" }
+exposed = { watch_gha_runs = "watch_gha_runs" }
+
+[envs.typst]
+channels = ["conda-forge"]
+dependencies = { typst = "*" }
+exposed = { typst = "typst" }
+
+[envs.git-delta]
+channels = ["conda-forge"]
+dependencies = { git-delta = "*" }
+exposed = { delta = "delta" }
+
+[envs.apptainer]
+channels = ["conda-forge"]
+dependencies = { apptainer = "*" }
+exposed = { apptainer = "apptainer", run-singularity = "run-singularity", singularity = "singularity" }
+
+[envs.norwegianblue]
+channels = ["conda-forge"]
+dependencies = { norwegianblue = "*" }
+exposed = { eol = "eol", norwegianblue = "norwegianblue" }
+
+[envs.root]
+channels = ["conda-forge"]
+dependencies = { root = "*" }
+exposed = { root = "root", pyroot = "python" }
 
 [envs.imagemagick]
 channels = ["conda-forge"]
@@ -255,7 +301,52 @@ channels = ["conda-forge"]
 dependencies = { conda-recipe-manager = "*" }
 exposed = { conda-recipe-manager = "conda-recipe-manager", crm = "crm" }
 
-[envs.data-science]
+[envs.tree]
 channels = ["conda-forge"]
-dependencies = { jupyterlab = "*", scipy = "*", pandas = "*", matplotlib = "*", scikit-learn = "*", notebook = "*", jax = "*", pytorch = "*" , uproot = "*" , hist = "*", mplhep = "*" }
-exposed = { jupyter = "jupyter", jupyter-lab = "jupyter-lab" , ipython = "ipython" }
+dependencies = { tree = "*" }
+exposed = { tree = "tree" }
+
+[envs.gh]
+channels = ["conda-forge"]
+dependencies = { gh = "*" }
+exposed = { gh = "gh" }
+
+[envs.brev]
+channels = ["conda-forge"]
+dependencies = { brev = "*" }
+exposed = { brev = "brev" }
+
+[envs.memray]
+channels = ["conda-forge"]
+dependencies = { memray = "*" }
+exposed = { memray = "memray", "memray3.14" = "memray3.14" }
+
+[envs.time]
+channels = ["conda-forge"]
+dependencies = { time = "*" }
+exposed = { time = "time" }
+
+[envs.glab]
+channels = ["conda-forge"]
+dependencies = { glab = "*" }
+exposed = { glab = "glab" }
+
+[envs.screenfetch]
+channels = ["conda-forge"]
+dependencies = { screenfetch = "*" }
+exposed = { screenfetch = "screenfetch" }
+
+[envs.openconnect]
+channels = ["conda-forge"]
+dependencies = { openconnect = "*" }
+exposed = { openconnect = "openconnect" }
+
+[envs.pypistats]
+channels = ["conda-forge"]
+dependencies = { pypistats = "*" }
+exposed = { pypistats = "pypistats" }
+
+[envs.cernopendata-client]
+channels = ["conda-forge"]
+dependencies = { cernopendata-client = "*", cernopendata-client-xrootd = "*" }
+exposed = { cernopendata-client = "cernopendata-client" }
