@@ -185,11 +185,6 @@ channels = ["conda-forge"]
 dependencies = { ripgrep = "*" }
 exposed = { rg = "rg" }
 
-[envs.pipx]
-channels = ["conda-forge"]
-dependencies = { pipx = "*" }
-exposed = { pipx = "pipx" }
-
 [envs.openssl]
 channels = ["conda-forge"]
 dependencies = { openssl = "*" }
@@ -264,7 +259,7 @@ exposed = { jupyter = "jupyter", jupyter-lab = "jupyter-lab" , ipython = "ipytho
 [envs.watchgha]
 channels = ["conda-forge"]
 dependencies = { watchgha = "*" }
-exposed = { watch_gha_runs = "watch_gha_runs" }
+exposed = { watch_gha_runs = "watch_gha_runs", watchgha = "watchgha" }
 
 [envs.typst]
 channels = ["conda-forge"]
@@ -346,7 +341,33 @@ channels = ["conda-forge"]
 dependencies = { pypistats = "*" }
 exposed = { pypistats = "pypistats" }
 
+[envs.pixi-cloud]
+channels = ["https://beta.prefix.dev/pixi-extensions"]
+dependencies = { pixi-cloud = "*" }
+exposed = { pixi-cloud = "pixi-cloud" }
+
 [envs.cernopendata-client]
 channels = ["conda-forge"]
 dependencies = { cernopendata-client = "*", cernopendata-client-xrootd = "*" }
 exposed = { cernopendata-client = "cernopendata-client" }
+
+[envs.dysk]
+channels = ["conda-forge"]
+dependencies = { dysk = "*" }
+exposed = { dysk = "dysk" }
+
+[envs.pixi-gui]
+channels = ["https://prefix.dev/pixi-gui", "https://prefix.dev/conda-forge"]
+dependencies = { pixi-gui = "*" }
+exposed = { pixi-gui = "pixi-gui" }
+shortcuts = ["pixi-gui"]
+
+[envs.prek]
+channels = ["conda-forge"]
+dependencies = { prek = "*" }
+exposed = { prek = "prek" }
+
+[envs.carapace]
+channels = ["conda-forge"]
+dependencies = { carapace = "*" }
+exposed = { carapace = "carapace" }
