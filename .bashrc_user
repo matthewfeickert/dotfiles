@@ -136,6 +136,7 @@ function build-staged-recipe () {
 # Utility function for setting up ATLAS Athena dev environment
 function setup-athena-dev-environment () {
     # Example:
+    # setup-athena-dev-environment --org feickert --repository athena --branch main --fetch-depth 50 --directory athena-dev
     # setup-athena-dev-environment --org atlas-asg --repository columnar-athena --branch columnar --fetch-depth 50 --directory debug-columnar-athena
 
     local ORG="atlas"
@@ -176,7 +177,7 @@ function setup-athena-dev-environment () {
             --help|-h)
                 echo "Usage: setup-athena-dev-environment [OPTIONS]"
                 echo -e "\nExample:"
-                echo "setup-athena-dev-environment --org atlas-asg --repository columnar-athena --branch columnar --fetch-depth 50 --directory debug-columnar-athena"
+                echo "setup-athena-dev-environment --org feickert --repository athena --branch main --fetch-depth 50 --directory athena-dev"
                 echo ""
                 echo "Options:"
                 echo "  --org, -o           Set the CERN GitLab org name (default: atlas)"
@@ -224,6 +225,20 @@ function setup-athena-dev-environment () {
 
     echo -e "\n# git switch ${BRANCH}"
     git switch ${BRANCH}
+
+    if [[ "${ORG}" != "atlas" ]]; then
+        echo -e "\n# git remote add upstream ssh://git@gitlab.cern.ch:7999/atlas/${REPOSITORY}.git"
+        git remote add upstream ssh://git@gitlab.cern.ch:7999/atlas/${REPOSITORY}.git
+
+        echo -e "\n# git fetch --depth ${FETCH_DEPTH} --no-tags --prune upstream"
+        git fetch --depth "${FETCH_DEPTH}" --no-tags --prune upstream
+
+        echo -e "\n# git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'"
+        git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+
+        echo -e "\n# git fetch --depth ${FETCH_DEPTH} --no-tags --prune origin"
+        git fetch --depth "${FETCH_DEPTH}" --no-tags --prune origin
+    fi
 
     echo -e "\n# cd -"
     cd -
